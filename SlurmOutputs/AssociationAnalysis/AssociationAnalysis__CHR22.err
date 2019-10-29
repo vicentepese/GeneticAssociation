@@ -1,0 +1,729 @@
+Loading required package: carData
+Parsed with column specification:
+cols(
+  .default = col_double(),
+  Protein = col_character()
+)
+See spec(...) for full column specifications.
+Warning message:
+Setting row names on a tibble is deprecated. 
+Rows read: 2,000
+Rows read: 4,000
+Rows read: 6,000
+Rows read: 8,000
+Rows read: 10,000
+Rows read: 12,000
+Rows read: 14,000
+Rows read: 16,000
+Rows read: 18,000
+Rows read: 20,000
+Rows read: 22,000
+Rows read: 24,000
+Rows read: 26,000
+Rows read: 28,000
+Rows read: 30,000
+Rows read: 32,000
+Rows read: 34,000
+Rows read: 36,000
+Rows read: 38,000
+Rows read: 40,000
+Rows read: 42,000
+Rows read: 44,000
+Rows read: 46,000
+Rows read: 48,000
+Rows read: 50,000
+Rows read: 52,000
+Rows read: 54,000
+Rows read: 56,000
+Rows read: 58,000
+Rows read: 60,000
+Rows read: 62,000
+Rows read: 64,000
+Rows read: 66,000
+Rows read: 68,000
+Rows read: 70,000
+Rows read: 72,000
+Rows read: 74,000
+Rows read: 76,000
+Rows read: 78,000
+Rows read: 80,000
+Rows read: 82,000
+Rows read: 84,000
+Rows read: 86,000
+Rows read: 88,000
+Rows read: 90,000
+Rows read: 92,000
+Rows read: 94,000
+Rows read: 96,000
+Rows read: 98,000
+Rows read: 100,000
+Rows read: 102,000
+Rows read: 104,000
+Rows read: 106,000
+Rows read: 108,000
+Rows read: 110,000
+Rows read: 112,000
+Rows read: 114,000
+Rows read: 116,000
+Rows read: 118,000
+Rows read: 120,000
+Rows read: 122,000
+Rows read: 124,000
+Rows read: 126,000
+Rows read: 128,000
+Rows read: 130,000
+Rows read: 132,000
+Rows read: 134,000
+Rows read: 136,000
+Rows read: 138,000
+Rows read: 140,000
+Rows read: 142,000
+Rows read: 144,000
+Rows read: 146,000
+Rows read: 148,000
+Rows read: 150,000
+Rows read: 152,000
+Rows read: 154,000
+Rows read: 156,000
+Rows read: 158,000
+Rows read: 160,000
+Rows read: 162,000
+Rows read: 164,000
+Rows read: 166,000
+Rows read: 168,000
+Rows read: 170,000
+Rows read: 172,000
+Rows read: 174,000
+Rows read: 176,000
+Rows read: 178,000
+Rows read: 180,000
+Rows read: 182,000
+Rows read: 184,000
+Rows read: 186,000
+Rows read: 188,000
+Rows read: 190,000
+Rows read: 192,000
+Rows read: 194,000
+Rows read: 196,000
+Rows read: 198,000
+Rows read: 200,000
+Rows read: 202,000
+Rows read: 204,000
+Rows read: 206,000
+Rows read: 208,000
+Rows read: 210,000
+Rows read: 212,000
+Rows read: 214,000
+Rows read: 216,000
+Rows read: 218,000
+Rows read: 220,000
+Rows read: 222,000
+Rows read: 224,000
+Rows read: 226,000
+Rows read: 228,000
+Rows read: 230,000
+Rows read: 232,000
+Rows read: 234,000
+Rows read: 236,000
+Rows read: 238,000
+Rows read: 240,000
+Rows read: 242,000
+Rows read: 244,000
+Rows read: 246,000
+Rows read: 248,000
+Rows read: 250,000
+Rows read: 252,000
+Rows read: 254,000
+Rows read: 256,000
+Rows read: 258,000
+Rows read: 260,000
+Rows read: 262,000
+Rows read: 264,000
+Rows read: 266,000
+Rows read: 268,000
+Rows read: 270,000
+Rows read: 272,000
+Rows read: 274,000
+Rows read: 276,000
+Rows read: 278,000
+Rows read: 280,000
+Rows read: 282,000
+Rows read: 284,000
+Rows read: 286,000
+Rows read: 288,000
+Rows read: 290,000
+Rows read: 292,000
+Rows read: 294,000
+Rows read: 296,000
+Rows read: 298,000
+Rows read: 300,000
+Rows read: 302,000
+Rows read: 304,000
+Rows read: 306,000
+Rows read: 308,000
+Rows read: 310,000
+Rows read: 312,000
+Rows read: 314,000
+Rows read: 316,000
+Rows read: 318,000
+Rows read: 320,000
+Rows read: 322,000
+Rows read: 324,000
+Rows read: 326,000
+Rows read: 328,000
+Rows read: 330,000
+Rows read: 332,000
+Rows read: 334,000
+Rows read: 336,000
+Rows read: 338,000
+Rows read: 340,000
+Rows read: 342,000
+Rows read: 344,000
+Rows read: 346,000
+Rows read: 348,000
+Rows read: 350,000
+Rows read: 352,000
+Rows read: 354,000
+Rows read: 356,000
+Rows read: 358,000
+Rows read: 360,000
+Rows read: 362,000
+Rows read: 364,000
+Rows read: 366,000
+Rows read: 368,000
+Rows read: 370,000
+Rows read: 372,000
+Rows read: 374,000
+Rows read: 376,000
+Rows read: 378,000
+Rows read: 380,000
+Rows read: 382,000
+Rows read: 384,000
+Rows read: 386,000
+Rows read: 388,000
+Rows read: 390,000
+Rows read: 392,000
+Rows read: 394,000
+Rows read: 396,000
+Rows read: 398,000
+Rows read: 400,000
+Rows read: 402,000
+Rows read: 404,000
+Rows read: 406,000
+Rows read: 408,000
+Rows read: 410,000
+Rows read: 412,000
+Rows read: 414,000
+Rows read: 416,000
+Rows read: 418,000
+Rows read: 420,000
+Rows read: 422,000
+Rows read: 424,000
+Rows read: 426,000
+Rows read: 428,000
+Rows read: 430,000
+Rows read: 432,000
+Rows read: 434,000
+Rows read: 436,000
+Rows read: 438,000
+Rows read: 440,000
+Rows read: 442,000
+Rows read: 444,000
+Rows read: 446,000
+Rows read: 448,000
+Rows read: 450,000
+Rows read: 452,000
+Rows read: 454,000
+Rows read: 456,000
+Rows read: 458,000
+Rows read: 460,000
+Rows read: 462,000
+Rows read: 464,000
+Rows read: 466,000
+Rows read: 468,000
+Rows read: 470,000
+Rows read: 472,000
+Rows read: 474,000
+Rows read: 476,000
+Rows read: 478,000
+Rows read: 480,000
+Rows read: 482,000
+Rows read: 484,000
+Rows read: 486,000
+Rows read: 488,000
+Rows read: 490,000
+Rows read: 492,000
+Rows read: 494,000
+Rows read: 496,000
+Rows read: 498,000
+Rows read: 500,000
+Rows read: 502,000
+Rows read: 504,000
+Rows read: 506,000
+Rows read: 508,000
+Rows read: 510,000
+Rows read: 512,000
+Rows read: 514,000
+Rows read: 516,000
+Rows read: 518,000
+Rows read: 520,000
+Rows read: 522,000
+Rows read: 524,000
+Rows read: 526,000
+Rows read: 528,000
+Rows read: 530,000
+Rows read: 532,000
+Rows read: 534,000
+Rows read: 536,000
+Rows read: 538,000
+Rows read: 540,000
+Rows read: 542,000
+Rows read: 544,000
+Rows read: 546,000
+Rows read: 548,000
+Rows read: 550,000
+Rows read: 552,000
+Rows read: 554,000
+Rows read: 556,000
+Rows read: 558,000
+Rows read: 560,000
+Rows read: 562,000
+Rows read: 564,000
+Rows read: 566,000
+Rows read: 568,000
+Rows read: 570,000
+Rows read: 572,000
+Rows read: 574,000
+Rows read: 576,000
+Rows read: 578,000
+Rows read: 580,000
+Rows read: 582,000
+Rows read: 584,000
+Rows read: 586,000
+Rows read: 588,000
+Rows read: 590,000
+Rows read: 592,000
+Rows read: 594,000
+Rows read: 596,000
+Rows read: 598,000
+Rows read: 600,000
+Rows read: 602,000
+Rows read: 604,000
+Rows read: 606,000
+Rows read: 608,000
+Rows read: 610,000
+Rows read: 612,000
+Rows read: 614,000
+Rows read: 616,000
+Rows read: 618,000
+Rows read: 620,000
+Rows read: 622,000
+Rows read: 624,000
+Rows read: 626,000
+Rows read: 628,000
+Rows read: 630,000
+Rows read: 632,000
+Rows read: 634,000
+Rows read: 636,000
+Rows read: 638,000
+Rows read: 640,000
+Rows read: 642,000
+Rows read: 644,000
+Rows read: 646,000
+Rows read: 648,000
+Rows read: 650,000
+Rows read: 652,000
+Rows read: 654,000
+Rows read: 656,000
+Rows read: 658,000
+Rows read: 660,000
+Rows read: 662,000
+Rows read: 664,000
+Rows read: 666,000
+Rows read: 668,000
+Rows read: 670,000
+Rows read: 672,000
+Rows read: 674,000
+Rows read: 676,000
+Rows read: 678,000
+Rows read: 680,000
+Rows read: 682,000
+Rows read: 684,000
+Rows read: 686,000
+Rows read: 688,000
+Rows read: 690,000
+Rows read: 692,000
+Rows read: 694,000
+Rows read: 696,000
+Rows read: 698,000
+Rows read: 700,000
+Rows read: 702,000
+Rows read: 704,000
+Rows read: 706,000
+Rows read: 708,000
+Rows read: 710,000
+Rows read: 712,000
+Rows read: 714,000
+Rows read: 716,000
+Rows read: 718,000
+Rows read: 720,000
+Rows read: 722,000
+Rows read: 724,000
+Rows read: 726,000
+Rows read: 728,000
+Rows read: 730,000
+Rows read: 732,000
+Rows read: 734,000
+Rows read: 736,000
+Rows read: 738,000
+Rows read: 740,000
+Rows read: 742,000
+Rows read: 744,000
+Rows read: 746,000
+Rows read: 748,000
+Rows read: 750,000
+Rows read: 752,000
+Rows read: 754,000
+Rows read: 756,000
+Rows read: 758,000
+Rows read: 760,000
+Rows read: 762,000
+Rows read: 764,000
+Rows read: 766,000
+Rows read: 768,000
+Rows read: 770,000
+Rows read: 772,000
+Rows read: 774,000
+Rows read: 776,000
+Rows read: 778,000
+Rows read: 780,000
+Rows read: 782,000
+Rows read: 784,000
+Rows read: 786,000
+Rows read: 788,000
+Rows read: 790,000
+Rows read: 792,000
+Rows read: 794,000
+Rows read: 796,000
+Rows read: 798,000
+Rows read: 800,000
+Rows read: 802,000
+Rows read: 804,000
+Rows read: 806,000
+Rows read: 808,000
+Rows read: 810,000
+Rows read: 812,000
+Rows read: 814,000
+Rows read: 816,000
+Rows read: 818,000
+Rows read: 820,000
+Rows read: 822,000
+Rows read: 824,000
+Rows read: 826,000
+Rows read: 828,000
+Rows read: 830,000
+Rows read: 832,000
+Rows read: 834,000
+Rows read: 836,000
+Rows read: 838,000
+Rows read: 840,000
+Rows read: 842,000
+Rows read: 844,000
+Rows read: 846,000
+Rows read: 848,000
+Rows read: 850,000
+Rows read: 852,000
+Rows read: 854,000
+Rows read: 856,000
+Rows read: 858,000
+Rows read: 860,000
+Rows read: 862,000
+Rows read: 864,000
+Rows read: 866,000
+Rows read: 868,000
+Rows read: 870,000
+Rows read: 872,000
+Rows read: 874,000
+Rows read: 876,000
+Rows read: 878,000
+Rows read: 880,000
+Rows read: 882,000
+Rows read: 884,000
+Rows read: 886,000
+Rows read: 888,000
+Rows read: 890,000
+Rows read: 892,000
+Rows read: 894,000
+Rows read: 896,000
+Rows read: 898,000
+Rows read: 900,000
+Rows read: 902,000
+Rows read: 904,000
+Rows read: 906,000
+Rows read: 908,000
+Rows read: 910,000
+Rows read: 912,000
+Rows read: 914,000
+Rows read: 916,000
+Rows read: 918,000
+Rows read: 920,000
+Rows read: 922,000
+Rows read: 924,000
+Rows read: 926,000
+Rows read: 928,000
+Rows read: 930,000
+Rows read: 932,000
+Rows read: 934,000
+Rows read: 936,000
+Rows read: 938,000
+Rows read: 940,000
+Rows read: 942,000
+Rows read: 944,000
+Rows read: 946,000
+Rows read: 948,000
+Rows read: 950,000
+Rows read: 952,000
+Rows read: 954,000
+Rows read: 956,000
+Rows read: 958,000
+Rows read: 960,000
+Rows read: 962,000
+Rows read: 964,000
+Rows read: 966,000
+Rows read: 968,000
+Rows read: 970,000
+Rows read: 972,000
+Rows read: 974,000
+Rows read: 976,000
+Rows read: 978,000
+Rows read: 980,000
+Rows read: 982,000
+Rows read: 984,000
+Rows read: 986,000
+Rows read: 988,000
+Rows read: 990,000
+Rows read: 992,000
+Rows read: 994,000
+Rows read: 996,000
+Rows read: 998,000
+Rows read: 1,000,000
+Rows read: 1,002,000
+Rows read: 1,004,000
+Rows read: 1,006,000
+Rows read: 1,008,000
+Rows read: 1,010,000
+Rows read: 1,012,000
+Rows read: 1,014,000
+Rows read: 1,016,000
+Rows read: 1,018,000
+Rows read: 1,020,000
+Rows read: 1,022,000
+Rows read: 1,024,000
+Rows read: 1,026,000
+Rows read: 1,028,000
+Rows read: 1,030,000
+Rows read: 1,032,000
+Rows read: 1,034,000
+Rows read: 1,036,000
+Rows read: 1,038,000
+Rows read: 1,040,000
+Rows read: 1,042,000
+Rows read: 1,044,000
+Rows read: 1,046,000
+Rows read: 1,048,000
+Rows read: 1,050,000
+Rows read: 1,052,000
+Rows read: 1,054,000
+Rows read: 1,056,000
+Rows read: 1,058,000
+Rows read: 1,060,000
+Rows read: 1,062,000
+Rows read: 1,064,000
+Rows read: 1,066,000
+Rows read: 1,068,000
+Rows read: 1,070,000
+Rows read: 1,072,000
+Rows read: 1,074,000
+Rows read: 1,076,000
+Rows read: 1,078,000
+Rows read: 1,080,000
+Rows read: 1,082,000
+Rows read: 1,084,000
+Rows read: 1,086,000
+Rows read: 1,088,000
+Rows read: 1,090,000
+Rows read: 1,092,000
+Rows read: 1,094,000
+Rows read: 1,096,000
+Rows read: 1,098,000
+Rows read: 1,100,000
+Rows read: 1,102,000
+Rows read: 1,104,000
+Rows read: 1,106,000
+Rows read: 1,108,000
+Rows read: 1,110,000
+Rows read: 1110572 done.
+Rows read: 2,000
+Rows read: 3493 done.
+Rows read: 9 done.
+Processing covariates
+Task finished in 0.00199999999999534 seconds
+Processing gene expression data (imputation, residualization)
+Task finished in 0.0460000000000065 seconds
+Creating output file(s)
+Task finished in 0.00699999999999079 seconds
+Performing eQTL analysis
+ 0.67% done, 202,565 eQTLs
+ 1.35% done, 351,426 eQTLs
+ 2.02% done, 560,002 eQTLs
+ 2.70% done, 710,686 eQTLs
+ 3.37% done, 969,591 eQTLs
+ 4.05% done, 1,158,618 eQTLs
+ 4.72% done, 1,366,454 eQTLs
+ 5.40% done, 1,521,402 eQTLs
+ 6.08% done, 1,711,413 eQTLs
+ 6.75% done, 1,845,105 eQTLs
+ 7.43% done, 2,069,205 eQTLs
+ 8.10% done, 2,235,302 eQTLs
+ 8.78% done, 2,446,754 eQTLs
+ 9.45% done, 2,607,329 eQTLs
+10.13% done, 2,769,136 eQTLs
+10.81% done, 2,893,280 eQTLs
+11.48% done, 3,089,968 eQTLs
+12.16% done, 3,235,759 eQTLs
+12.83% done, 3,443,045 eQTLs
+13.51% done, 3,600,078 eQTLs
+14.18% done, 3,790,011 eQTLs
+14.86% done, 3,928,073 eQTLs
+15.54% done, 4,132,995 eQTLs
+16.21% done, 4,279,931 eQTLs
+16.89% done, 4,470,647 eQTLs
+17.56% done, 4,614,132 eQTLs
+18.24% done, 4,823,597 eQTLs
+18.91% done, 4,979,098 eQTLs
+19.59% done, 5,192,683 eQTLs
+20.27% done, 5,355,353 eQTLs
+20.94% done, 5,571,084 eQTLs
+21.62% done, 5,732,229 eQTLs
+22.29% done, 5,920,606 eQTLs
+22.97% done, 6,061,566 eQTLs
+23.64% done, 6,257,287 eQTLs
+24.32% done, 6,401,736 eQTLs
+25.00% done, 6,627,699 eQTLs
+25.67% done, 6,799,763 eQTLs
+26.35% done, 6,997,610 eQTLs
+27.02% done, 7,145,913 eQTLs
+27.70% done, 7,344,532 eQTLs
+28.37% done, 7,495,069 eQTLs
+29.05% done, 7,655,931 eQTLs
+29.72% done, 7,774,968 eQTLs
+30.40% done, 7,973,886 eQTLs
+31.08% done, 8,119,713 eQTLs
+31.75% done, 8,298,292 eQTLs
+32.43% done, 8,431,148 eQTLs
+33.10% done, 8,667,514 eQTLs
+33.78% done, 8,841,137 eQTLs
+34.45% done, 9,038,082 eQTLs
+35.13% done, 9,185,078 eQTLs
+35.81% done, 9,400,035 eQTLs
+36.48% done, 9,557,613 eQTLs
+37.16% done, 9,748,282 eQTLs
+37.83% done, 9,884,417 eQTLs
+38.51% done, 10,083,602 eQTLs
+39.18% done, 10,226,681 eQTLs
+39.86% done, 10,396,010 eQTLs
+40.54% done, 10,522,970 eQTLs
+41.21% done, 10,760,765 eQTLs
+41.89% done, 10,938,619 eQTLs
+42.56% done, 11,128,850 eQTLs
+43.24% done, 11,273,168 eQTLs
+43.91% done, 11,523,505 eQTLs
+44.59% done, 11,718,600 eQTLs
+45.27% done, 11,916,772 eQTLs
+45.94% done, 12,064,715 eQTLs
+46.62% done, 12,256,609 eQTLs
+47.29% done, 12,400,426 eQTLs
+47.97% done, 12,598,043 eQTLs
+48.64% done, 12,740,969 eQTLs
+49.32% done, 12,909,118 eQTLs
+50.00% done, 13,025,856 eQTLs
+50.67% done, 13,196,525 eQTLs
+51.35% done, 13,326,719 eQTLs
+52.02% done, 13,523,348 eQTLs
+52.70% done, 13,668,278 eQTLs
+53.37% done, 13,881,895 eQTLs
+54.05% done, 14,042,108 eQTLs
+54.72% done, 14,278,289 eQTLs
+55.40% done, 14,457,960 eQTLs
+56.08% done, 14,670,715 eQTLs
+56.75% done, 14,823,900 eQTLs
+57.43% done, 15,038,180 eQTLs
+58.10% done, 15,200,454 eQTLs
+58.78% done, 15,373,200 eQTLs
+59.45% done, 15,502,995 eQTLs
+60.13% done, 15,649,408 eQTLs
+60.81% done, 15,755,075 eQTLs
+61.48% done, 15,964,742 eQTLs
+62.16% done, 16,119,300 eQTLs
+62.83% done, 16,346,035 eQTLs
+63.51% done, 16,513,047 eQTLs
+64.18% done, 16,742,107 eQTLs
+64.86% done, 16,910,096 eQTLs
+65.54% done, 17,090,480 eQTLs
+66.21% done, 17,229,986 eQTLs
+66.89% done, 17,459,515 eQTLs
+67.56% done, 17,634,115 eQTLs
+68.24% done, 17,834,321 eQTLs
+68.91% done, 17,986,942 eQTLs
+69.59% done, 18,173,226 eQTLs
+70.27% done, 18,314,440 eQTLs
+70.94% done, 18,513,081 eQTLs
+71.62% done, 18,661,978 eQTLs
+72.29% done, 18,843,713 eQTLs
+72.97% done, 18,971,627 eQTLs
+73.64% done, 19,175,639 eQTLs
+74.32% done, 19,323,751 eQTLs
+75.00% done, 19,552,031 eQTLs
+75.67% done, 19,727,311 eQTLs
+76.35% done, 19,930,856 eQTLs
+77.02% done, 20,082,465 eQTLs
+77.70% done, 20,250,468 eQTLs
+78.37% done, 20,379,601 eQTLs
+79.05% done, 20,605,760 eQTLs
+79.72% done, 20,777,704 eQTLs
+80.40% done, 20,993,304 eQTLs
+81.08% done, 21,154,620 eQTLs
+81.75% done, 21,371,451 eQTLs
+82.43% done, 21,535,305 eQTLs
+83.10% done, 21,768,661 eQTLs
+83.78% done, 21,935,356 eQTLs
+84.45% done, 22,132,314 eQTLs
+85.13% done, 22,278,895 eQTLs
+85.81% done, 22,468,390 eQTLs
+86.48% done, 22,607,513 eQTLs
+87.16% done, 22,812,216 eQTLs
+87.83% done, 22,963,249 eQTLs
+88.51% done, 23,177,245 eQTLs
+89.18% done, 23,337,758 eQTLs
+89.86% done, 23,545,527 eQTLs
+90.54% done, 23,699,515 eQTLs
+91.21% done, 23,936,539 eQTLs
+91.89% done, 24,111,217 eQTLs
+92.56% done, 24,304,628 eQTLs
+93.24% done, 24,450,698 eQTLs
+93.91% done, 24,627,888 eQTLs
+94.59% done, 24,764,036 eQTLs
+95.27% done, 24,958,015 eQTLs
+95.94% done, 25,102,896 eQTLs
+96.62% done, 25,327,882 eQTLs
+97.29% done, 25,493,219 eQTLs
+97.97% done, 25,699,486 eQTLs
+98.64% done, 25,851,125 eQTLs
+99.32% done, 25,921,987 eQTLs
+100.00% done, 25,974,811 eQTLs
+Task finished in 190.408 seconds
+
+Warning message:
+In Matrix_eQTL_main(snps = snps, gene = gene, cvrt = cvrt, output_file_name = output_file_name,  :
+  Warning: pvOutputThreshold may be too large.
+Expected number of findings > 25621678.95

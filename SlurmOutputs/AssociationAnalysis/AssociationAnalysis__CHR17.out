@@ -1,0 +1,61 @@
+[1] "The Association analysis will be run in chromosome 17"
+[1] " Loading CHR17_protData.csv"
+# A tibble: 6 x 111
+  Protein `114A01` `114A02` `114A03` `114A04` `114A05` `114A06` `114A07`
+  <chr>      <dbl>    <dbl>    <dbl>    <dbl>    <dbl>    <dbl>    <dbl>
+1 IGHJ6*…       23      152       66    17524      129    17716       78
+2 IGHJ4*…    10438   114850    14232    39022    43609    37345     3844
+3 IGHJ4*…       90      663      310      812      711      448       41
+4 IGHJ3*…       48      997      269     1076      805      788       36
+5 IGHJ5*…     3662    44657     4142    13313    14522    14762     1197
+6 IGHJ6*…        7      618      120        8      188        7        3
+# … with 103 more variables: `114A08` <dbl>, `114A09` <dbl>, `114A10` <dbl>,
+#   `114A11` <dbl>, `114A12` <dbl>, `114B01` <dbl>, `114B02` <dbl>,
+#   `114B03` <dbl>, `114B04` <dbl>, `114B05` <dbl>, `114B06` <dbl>,
+#   `114B07` <dbl>, `114B08` <dbl>, `114B09` <dbl>, `114B10` <dbl>,
+#   `114B11` <dbl>, `114B12` <dbl>, `114C01` <dbl>, `114C02` <dbl>,
+#   `114C03` <dbl>, `114C04` <dbl>, `114C05` <dbl>, `114C06` <dbl>,
+#   `114C07` <dbl>, `114C08` <dbl>, `114C09` <dbl>, `114C10` <dbl>,
+#   `114C11` <dbl>, `114C12` <dbl>, `114D01` <dbl>, `114D02` <dbl>,
+#   `114D03` <dbl>, `114D04` <dbl>, `114D05` <dbl>, `114D06` <dbl>,
+#   `114D07` <dbl>, `114D08` <dbl>, `114D09` <dbl>, `114D10` <dbl>,
+#   `114D11` <dbl>, `114D12` <dbl>, `114E01` <dbl>, `114E02` <dbl>,
+#   `114E03` <dbl>, `114E04` <dbl>, `114E05` <dbl>, `114E06` <dbl>,
+#   `114E07` <dbl>, `114E08` <dbl>, `114E09` <dbl>, `114E10` <dbl>,
+#   `114E11` <dbl>, `114E12` <dbl>, `114F01` <dbl>, `114F02` <dbl>,
+#   `114F03` <dbl>, `114F04` <dbl>, `114F05` <dbl>, `114F06` <dbl>,
+#   `114F07` <dbl>, `114F08` <dbl>, `114F09` <dbl>, `114F10` <dbl>,
+#   `114F11` <dbl>, `114F12` <dbl>, `114G01` <dbl>, `114G02` <dbl>,
+#   `114G03` <dbl>, `114G04` <dbl>, `114G05` <dbl>, `114G06` <dbl>,
+#   `114G07` <dbl>, `114G08` <dbl>, `114G09` <dbl>, `114G10` <dbl>,
+#   `114G11` <dbl>, `114G12` <dbl>, `114H01` <dbl>, `114H02` <dbl>,
+#   `114H03` <dbl>, `114H04` <dbl>, `114H05` <dbl>, `114H06` <dbl>,
+#   `114H07` <dbl>, `114H08` <dbl>, `114H09` <dbl>, `114H10` <dbl>,
+#   `114H11` <dbl>, `114H12` <dbl>, `115A01` <dbl>, `115A02` <dbl>,
+#   `115A03` <dbl>, `115A04` <dbl>, `115A05` <dbl>, `115A06` <dbl>,
+#   `115A07` <dbl>, `115A08` <dbl>, `115A09` <dbl>, `115A10` <dbl>,
+#   `115A11` <dbl>, …
+[1] "Normalizing data"
+[1] "17"
+SNPs before filtering: 2342598 
+SNPs after filtering: 277685 
+[1] "Analysis finished"
+[1] "Unlinking output"
+Analysis done in:  62.869  seconds 
+Detected eQTLs: 
+      snps                   gene statistic       pvalue          FDR
+1 43883893            IGHV1-69*05  37.89562 9.720491e-61 9.428427e-52
+2  2043645 IGHV3-13*03 & IGHJ5*02  36.33312 4.761788e-59 1.539571e-50
+3  2043684 IGHV3-13*03 & IGHJ5*02  36.33312 4.761788e-59 1.539571e-50
+4 43904862            IGHV1-69*05  35.78175 1.946142e-58 4.719170e-50
+5  2043645 IGHV3-13*03 & IGHJ4*02  35.42856 4.842718e-58 7.828688e-50
+6  2043684 IGHV3-13*03 & IGHJ4*02  35.42856 4.842718e-58 7.828688e-50
+         beta
+1 1.422161110
+2 0.001923415
+3 0.001923415
+4 1.458397309
+5 0.001235839
+6 0.001235839
+[1] "Saving file"
+File saved in /scratch/users/vipese/GeneticAssociation/Outputs/CHR_17.csvNULL

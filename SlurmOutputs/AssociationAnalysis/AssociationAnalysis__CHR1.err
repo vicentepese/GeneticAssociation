@@ -1,0 +1,482 @@
+Loading required package: carData
+Parsed with column specification:
+cols(
+  .default = col_double(),
+  Protein = col_character()
+)
+See spec(...) for full column specifications.
+Warning message:
+Setting row names on a tibble is deprecated. 
+Rows read: 2,000
+Rows read: 4,000
+Rows read: 6,000
+Rows read: 8,000
+Rows read: 10,000
+Rows read: 12,000
+Rows read: 14,000
+Rows read: 16,000
+Rows read: 18,000
+Rows read: 20,000
+Rows read: 22,000
+Rows read: 24,000
+Rows read: 26,000
+Rows read: 28,000
+Rows read: 30,000
+Rows read: 32,000
+Rows read: 34,000
+Rows read: 36,000
+Rows read: 38,000
+Rows read: 40,000
+Rows read: 42,000
+Rows read: 44,000
+Rows read: 46,000
+Rows read: 48,000
+Rows read: 50,000
+Rows read: 52,000
+Rows read: 54,000
+Rows read: 56,000
+Rows read: 58,000
+Rows read: 60,000
+Rows read: 62,000
+Rows read: 64,000
+Rows read: 66,000
+Rows read: 68,000
+Rows read: 70,000
+Rows read: 72,000
+Rows read: 74,000
+Rows read: 76,000
+Rows read: 78,000
+Rows read: 80,000
+Rows read: 82,000
+Rows read: 84,000
+Rows read: 86,000
+Rows read: 88,000
+Rows read: 90,000
+Rows read: 92,000
+Rows read: 94,000
+Rows read: 96,000
+Rows read: 98,000
+Rows read: 100,000
+Rows read: 102,000
+Rows read: 104,000
+Rows read: 106,000
+Rows read: 108,000
+Rows read: 110,000
+Rows read: 112,000
+Rows read: 114,000
+Rows read: 116,000
+Rows read: 118,000
+Rows read: 120,000
+Rows read: 122,000
+Rows read: 124,000
+Rows read: 126,000
+Rows read: 128,000
+Rows read: 130,000
+Rows read: 132,000
+Rows read: 134,000
+Rows read: 136,000
+Rows read: 138,000
+Rows read: 140,000
+Rows read: 142,000
+Rows read: 144,000
+Rows read: 146,000
+Rows read: 148,000
+Rows read: 150,000
+Rows read: 152,000
+Rows read: 154,000
+Rows read: 156,000
+Rows read: 158,000
+Rows read: 160,000
+Rows read: 162,000
+Rows read: 164,000
+Rows read: 166,000
+Rows read: 168,000
+Rows read: 170,000
+Rows read: 172,000
+Rows read: 174,000
+Rows read: 176,000
+Rows read: 178,000
+Rows read: 180,000
+Rows read: 182,000
+Rows read: 184,000
+Rows read: 186,000
+Rows read: 188,000
+Rows read: 190,000
+Rows read: 192,000
+Rows read: 194,000
+Rows read: 196,000
+Rows read: 198,000
+Rows read: 200,000
+Rows read: 202,000
+Rows read: 204,000
+Rows read: 206,000
+Rows read: 208,000
+Rows read: 210,000
+Rows read: 212,000
+Rows read: 214,000
+Rows read: 216,000
+Rows read: 218,000
+Rows read: 220,000
+Rows read: 222,000
+Rows read: 224,000
+Rows read: 226,000
+Rows read: 228,000
+Rows read: 230,000
+Rows read: 232,000
+Rows read: 234,000
+Rows read: 236,000
+Rows read: 238,000
+Rows read: 240,000
+Rows read: 242,000
+Rows read: 244,000
+Rows read: 246,000
+Rows read: 248,000
+Rows read: 250,000
+Rows read: 252,000
+Rows read: 254,000
+Rows read: 256,000
+Rows read: 258,000
+Rows read: 260,000
+Rows read: 262,000
+Rows read: 264,000
+Rows read: 266,000
+Rows read: 268,000
+Rows read: 270,000
+Rows read: 272,000
+Rows read: 274,000
+Rows read: 276,000
+Rows read: 278,000
+Rows read: 280,000
+Rows read: 282,000
+Rows read: 284,000
+Rows read: 286,000
+Rows read: 288,000
+Rows read: 290,000
+Rows read: 292,000
+Rows read: 294,000
+Rows read: 296,000
+Rows read: 298,000
+Rows read: 300,000
+Rows read: 302,000
+Rows read: 304,000
+Rows read: 306,000
+Rows read: 308,000
+Rows read: 310,000
+Rows read: 312,000
+Rows read: 314,000
+Rows read: 316,000
+Rows read: 318,000
+Rows read: 320,000
+Rows read: 322,000
+Rows read: 324,000
+Rows read: 326,000
+Rows read: 328,000
+Rows read: 330,000
+Rows read: 332,000
+Rows read: 334,000
+Rows read: 336,000
+Rows read: 338,000
+Rows read: 340,000
+Rows read: 342,000
+Rows read: 344,000
+Rows read: 346,000
+Rows read: 348,000
+Rows read: 350,000
+Rows read: 352,000
+Rows read: 354,000
+Rows read: 356,000
+Rows read: 358,000
+Rows read: 360,000
+Rows read: 362,000
+Rows read: 364,000
+Rows read: 366,000
+Rows read: 368,000
+Rows read: 370,000
+Rows read: 372,000
+Rows read: 374,000
+Rows read: 376,000
+Rows read: 378,000
+Rows read: 380,000
+Rows read: 382,000
+Rows read: 384,000
+Rows read: 386,000
+Rows read: 388,000
+Rows read: 390,000
+Rows read: 392,000
+Rows read: 394,000
+Rows read: 396,000
+Rows read: 398,000
+Rows read: 400,000
+Rows read: 402,000
+Rows read: 404,000
+Rows read: 406,000
+Rows read: 408,000
+Rows read: 410,000
+Rows read: 412,000
+Rows read: 414,000
+Rows read: 416,000
+Rows read: 418,000
+Rows read: 420,000
+Rows read: 422,000
+Rows read: 424,000
+Rows read: 426,000
+Rows read: 428,000
+Rows read: 430,000
+Rows read: 432,000
+Rows read: 434,000
+Rows read: 436,000
+Rows read: 438,000
+Rows read: 440,000
+Rows read: 442,000
+Rows read: 444,000
+Rows read: 446,000
+Rows read: 448,000
+Rows read: 450,000
+Rows read: 452,000
+Rows read: 454,000
+Rows read: 456,000
+Rows read: 458,000
+Rows read: 460,000
+Rows read: 462,000
+Rows read: 464,000
+Rows read: 466,000
+Rows read: 468,000
+Rows read: 470,000
+Rows read: 472,000
+Rows read: 474,000
+Rows read: 476,000
+Rows read: 478,000
+Rows read: 480,000
+Rows read: 482,000
+Rows read: 484,000
+Rows read: 486,000
+Rows read: 488,000
+Rows read: 490,000
+Rows read: 492,000
+Rows read: 494,000
+Rows read: 496,000
+Rows read: 498,000
+Rows read: 500,000
+Rows read: 502,000
+Rows read: 504,000
+Rows read: 506,000
+Rows read: 508,000
+Rows read: 510,000
+Rows read: 512,000
+Rows read: 514,000
+Rows read: 516,000
+Rows read: 518,000
+Rows read: 520,000
+Rows read: 522,000
+Rows read: 524,000
+Rows read: 526,000
+Rows read: 528,000
+Rows read: 530,000
+Rows read: 532,000
+Rows read: 534,000
+Rows read: 536,000
+Rows read: 538,000
+Rows read: 540,000
+Rows read: 542,000
+Rows read: 544,000
+Rows read: 546,000
+Rows read: 548,000
+Rows read: 550,000
+Rows read: 552,000
+Rows read: 554,000
+Rows read: 556,000
+Rows read: 558,000
+Rows read: 560,000
+Rows read: 562,000
+Rows read: 564,000
+Rows read: 566,000
+Rows read: 568,000
+Rows read: 570,000
+Rows read: 572,000
+Rows read: 574,000
+Rows read: 576,000
+Rows read: 578,000
+Rows read: 580,000
+Rows read: 582,000
+Rows read: 584,000
+Rows read: 586,000
+Rows read: 588,000
+Rows read: 590,000
+Rows read: 592,000
+Rows read: 594,000
+Rows read: 596,000
+Rows read: 598,000
+Rows read: 600,000
+Rows read: 602,000
+Rows read: 604,000
+Rows read: 606,000
+Rows read: 608,000
+Rows read: 610,000
+Rows read: 612,000
+Rows read: 614,000
+Rows read: 616,000
+Rows read: 618,000
+Rows read: 620,000
+Rows read: 622,000
+Rows read: 624,000
+Rows read: 626,000
+Rows read: 628,000
+Rows read: 630,000
+Rows read: 632,000
+Rows read: 634,000
+Rows read: 636,000
+Rows read: 638,000
+Rows read: 640,000
+Rows read: 642,000
+Rows read: 644,000
+Rows read: 646,000
+Rows read: 648,000
+Rows read: 650,000
+Rows read: 652,000
+Rows read: 654,000
+Rows read: 656,000
+Rows read: 658,000
+Rows read: 660,000
+Rows read: 662,000
+Rows read: 664,000
+Rows read: 666,000
+Rows read: 668,000
+Rows read: 670,000
+Rows read: 672,000
+Rows read: 674,000
+Rows read: 676,000
+Rows read: 678,000
+Rows read: 680,000
+Rows read: 682,000
+Rows read: 684,000
+Rows read: 686,000
+Rows read: 688,000
+Rows read: 690,000
+Rows read: 692,000
+Rows read: 694,000
+Rows read: 696,000
+Rows read: 698,000
+Rows read: 700,000
+Rows read: 702,000
+Rows read: 704,000
+Rows read: 706,000
+Rows read: 708,000
+Rows read: 710,000
+Rows read: 712,000
+Rows read: 714,000
+Rows read: 716,000
+Rows read: 718,000
+Rows read: 720,000
+Error in dim(data) = c(length(rowvals[[1]]), length(rowvals)) : 
+  dims [product 220000] do not match the length of object [220001]
+In addition: Warning messages:
+1: In scan(file = fid, what = character(), n = fileSkipColumns, quiet = TRUE,  :
+  embedded nul(s) found in input
+2: In scan(file = fid, what = double(), nlines = 1, quiet = TRUE, sep = fileDelimiter,  :
+  embedded nul(s) found in input
+Warning message:
+closing unused connection 3 (/scratch/users/vipese/GeneticAssociation/ProcessedData/CHR1_imputeData.csv) 
+Rows read: 2,000
+Rows read: 3493 done.
+Rows read: 9 done.
+Processing covariates
+Task finished in 0.00199999999999534 seconds
+Processing gene expression data (imputation, residualization)
+Task finished in 0.0530000000000044 seconds
+Creating output file(s)
+Task finished in 0.00899999999999324 seconds
+Performing eQTL analysis
+ 1.13% done, 213,075 eQTLs
+ 2.27% done, 380,456 eQTLs
+ 3.40% done, 559,127 eQTLs
+ 4.54% done, 689,827 eQTLs
+ 5.68% done, 918,013 eQTLs
+ 6.81% done, 1,087,959 eQTLs
+ 7.95% done, 1,313,797 eQTLs
+ 9.09% done, 1,481,188 eQTLs
+10.22% done, 1,666,410 eQTLs
+11.36% done, 1,809,406 eQTLs
+12.50% done, 1,982,715 eQTLs
+13.63% done, 2,110,822 eQTLs
+14.77% done, 2,283,125 eQTLs
+15.90% done, 2,411,322 eQTLs
+17.04% done, 2,596,035 eQTLs
+18.18% done, 2,731,287 eQTLs
+19.31% done, 2,929,965 eQTLs
+20.45% done, 3,074,824 eQTLs
+21.59% done, 3,311,719 eQTLs
+22.72% done, 3,479,746 eQTLs
+23.86% done, 3,714,161 eQTLs
+25.00% done, 3,884,388 eQTLs
+26.13% done, 4,073,970 eQTLs
+27.27% done, 4,219,651 eQTLs
+28.40% done, 4,467,567 eQTLs
+29.54% done, 4,652,030 eQTLs
+30.68% done, 4,846,814 eQTLs
+31.81% done, 4,993,233 eQTLs
+32.95% done, 5,226,987 eQTLs
+34.09% done, 5,400,320 eQTLs
+35.22% done, 5,624,153 eQTLs
+36.36% done, 5,791,919 eQTLs
+37.50% done, 5,983,740 eQTLs
+38.63% done, 6,124,987 eQTLs
+39.77% done, 6,299,446 eQTLs
+40.90% done, 6,428,292 eQTLs
+42.04% done, 6,619,557 eQTLs
+43.18% done, 6,764,117 eQTLs
+44.31% done, 6,955,814 eQTLs
+45.45% done, 7,096,141 eQTLs
+46.59% done, 7,316,339 eQTLs
+47.72% done, 7,478,266 eQTLs
+48.86% done, 7,689,828 eQTLs
+50.00% done, 7,845,146 eQTLs
+51.13% done, 8,017,783 eQTLs
+52.27% done, 8,146,945 eQTLs
+53.40% done, 8,321,855 eQTLs
+54.54% done, 8,450,393 eQTLs
+55.68% done, 8,716,013 eQTLs
+56.81% done, 8,916,983 eQTLs
+57.95% done, 9,095,225 eQTLs
+59.09% done, 9,223,192 eQTLs
+60.22% done, 9,389,209 eQTLs
+61.36% done, 9,513,937 eQTLs
+62.50% done, 9,677,289 eQTLs
+63.63% done, 9,802,877 eQTLs
+64.77% done, 10,006,943 eQTLs
+65.90% done, 10,157,887 eQTLs
+67.04% done, 10,332,894 eQTLs
+68.18% done, 10,458,241 eQTLs
+69.31% done, 10,716,606 eQTLs
+70.45% done, 10,914,012 eQTLs
+71.59% done, 11,120,280 eQTLs
+72.72% done, 11,270,574 eQTLs
+73.86% done, 11,452,427 eQTLs
+75.00% done, 11,586,373 eQTLs
+76.13% done, 11,813,299 eQTLs
+77.27% done, 11,982,728 eQTLs
+78.40% done, 12,217,997 eQTLs
+79.54% done, 12,397,920 eQTLs
+80.68% done, 12,630,113 eQTLs
+81.81% done, 12,799,886 eQTLs
+82.95% done, 13,024,203 eQTLs
+84.09% done, 13,189,738 eQTLs
+85.22% done, 13,438,411 eQTLs
+86.36% done, 13,613,428 eQTLs
+87.50% done, 13,838,078 eQTLs
+88.63% done, 14,004,760 eQTLs
+89.77% done, 14,231,002 eQTLs
+90.90% done, 14,398,419 eQTLs
+92.04% done, 14,629,897 eQTLs
+93.18% done, 14,794,048 eQTLs
+94.31% done, 14,977,570 eQTLs
+95.45% done, 15,114,052 eQTLs
+96.59% done, 15,295,026 eQTLs
+97.72% done, 15,431,020 eQTLs
+98.86% done, 15,633,983 eQTLs
+100.00% done, 15,782,945 eQTLs
+Task finished in 147.111 seconds
+
+Warning message:
+In Matrix_eQTL_main(snps = snps, gene = gene, cvrt = cvrt, output_file_name = output_file_name,  :
+  Warning: pvOutputThreshold may be too large.
+Expected number of findings > 15358895.65
