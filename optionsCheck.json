@@ -1,0 +1,16 @@
+{
+    "path":{
+        "home": "/home/users/vipese/Projects/GeneticAssociation/"
+    },
+
+    "folder":{
+        "checkRepro":"ReproData/",
+        "chrDataFolder": "/scratch/users/vipese/GeneticAssociation/Association_Analysis_Outputs/",
+        "reproDataFolder": "/home/users/vipese/Projects/GeneticAssociation/"
+    },
+
+    "file":{
+        "checkRepro":"ReproData/ng.3625-S4.xlsx"
+    }
+
+}
