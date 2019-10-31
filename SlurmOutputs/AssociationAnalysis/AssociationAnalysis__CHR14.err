@@ -1347,11 +1347,11 @@ Rows read: 2,000
 Rows read: 3493 done.
 Rows read: 9 done.
 Processing covariates
-Task finished in 0.0029999999999859 seconds
+Task finished in 0.00199999999998113 seconds
 Processing gene expression data (imputation, residualization)
-Task finished in 0.0749999999999886 seconds
+Task finished in 0.0430000000000064 seconds
 Creating output file(s)
-Task finished in 0.0170000000000528 seconds
+Task finished in 0.0100000000000193 seconds
 Performing eQTL analysis
  0.29% done, 227,000 eQTLs
  0.59% done, 389,902 eQTLs
@@ -1670,4 +1670,30 @@ Performing eQTL analysis
 93.19% done, 57,065,930 eQTLs
 93.49% done, 57,204,393 eQTLs
 93.78% done, 57,451,196 eQTLs
-slurmstepd: error: *** JOB 53873215 ON sh-114-11 CANCELLED AT 2019-10-30T15:12:56 ***
+94.08% done, 57,639,532 eQTLs
+94.37% done, 57,827,539 eQTLs
+94.67% done, 57,968,042 eQTLs
+94.97% done, 58,185,585 eQTLs
+95.26% done, 58,344,016 eQTLs
+95.56% done, 58,566,994 eQTLs
+95.85% done, 58,734,861 eQTLs
+96.15% done, 58,936,176 eQTLs
+96.44% done, 59,091,303 eQTLs
+96.74% done, 59,275,431 eQTLs
+97.04% done, 59,410,130 eQTLs
+97.33% done, 59,602,060 eQTLs
+97.63% done, 59,743,611 eQTLs
+97.92% done, 59,968,440 eQTLs
+98.22% done, 60,138,373 eQTLs
+98.52% done, 60,361,904 eQTLs
+98.81% done, 60,525,296 eQTLs
+99.11% done, 60,751,772 eQTLs
+99.40% done, 60,920,394 eQTLs
+99.70% done, 61,038,935 eQTLs
+100.00% done, 61,125,216 eQTLs
+Task finished in 453.585 seconds
+
+Warning message:
+In Matrix_eQTL_main(snps = snps, gene = gene, cvrt = cvrt, output_file_name = output_file_name,  :
+  Warning: pvOutputThreshold may be too large.
+Expected number of findings > 58907698.5

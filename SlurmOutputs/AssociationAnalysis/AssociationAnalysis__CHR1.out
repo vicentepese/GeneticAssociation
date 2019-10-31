@@ -37,3 +37,25 @@
 #   `115A11` <dbl>, …
 [1] "Normalizing data"
 [1] "1"
+SNPs before filtering: 6502319 
+SNPs after filtering: 800116 
+[1] "Analysis finished"
+[1] "Unlinking output"
+Analysis done in:  184.513  seconds 
+Detected eQTLs: 
+                      snps                   gene statistic       pvalue
+1 rs77093888:180906049 :G:C IGHV1-69*06 & IGHJ6*04  50.53401 1.669596e-72
+2 rs77093888:180906049:G:C IGHV1-69*13 & IGHJ6*04  48.50677 8.227943e-71
+3  rs57787581:23212329:G:A IGHV4-59*02 & IGHJ3*01  47.55458 5.406918e-70
+4  rs74061066:23217019:A:G IGHV4-59*02 & IGHJ3*01  47.30321 8.939394e-70
+5  rs115656545:3031056:G:A IGHV1-69*06 & IGHJ6*04  46.98755 1.686680e-69
+6 rs189353369:24455048:G:C            IGHV1-69*05  46.88091 2.091984e-69
+           FDR      beta
+1 4.666195e-63 0.4344106
+2 1.149775e-61 0.5608747
+3 5.037094e-61 0.5746909
+4 6.245966e-61 0.5862352
+5 9.427886e-61 0.4364213
+6 9.744480e-61 1.4211919
+[1] "Saving file"
+File saved in /scratch/users/vipese/GeneticAssociation/Outputs/CHR_1.csvNULL

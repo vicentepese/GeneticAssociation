@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #SBATCH --job-name=AssociationAnalysis
-#SBATCH -p mignot
-#SBATCH --cpus-per-task=10
+#SBATCH -p owners
+#SBATCH --cpus-per-task=20
 #SBATCH --mem-per-cpu=20G
 #SBATCH --output=../SlurmOutputs/AssociationAnalysis/AssociationAnalysis__CHR%a.out
 #SBATCH --error=../SlurmOutputs/AssociationAnalysis/AssociationAnalysis__CHR%a.err

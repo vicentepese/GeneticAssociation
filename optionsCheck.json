@@ -5,7 +5,7 @@
 
     "folder":{
         "checkRepro":"ReproData/",
-        "chrDataFolder": "/scratch/users/vipese/GeneticAssociation/Association_Analysis_Outputs/",
+        "chrDataFolder": "/scratch/users/vipese/GeneticAssociation/AA_GzipOutputs/",
         "reproDataFolder": "/home/users/vipese/Projects/GeneticAssociation/"
     },
 

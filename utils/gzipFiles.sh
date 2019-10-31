@@ -1,23 +1,13 @@
 #!/bin/bash
 
-#SBATCH --job-name=gzipFiles
+#SBATCH --job-name=Gzip%a
 #SBATCH -p owners
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=10
+#SBATCH --mem-per-cpu=20G
 #SBATCH --nodes=1
-#SBATCH -t 10:00:00
+#SBATCH -t 05:00:00
+#SBATCH --array=1-22
 
-# Go to folder 
 cd /scratch/users/vipese/GeneticAssociation/Outputs/
-
-# Get files 
-files="$(ls)"
-
-# Gzip each file 
-for file in $files ; do
-  echo "Gziping $file"
-  gzip $file
-  echo "$file succesfully gziped"
-  echo "Moving $file to AAO folder"
-  mv "$file.gz" ../Association_Analysis_Outputs
-  echo "$file succesfully moved"
-done 
+pigz CHR_$SLURM_ARRAY_TASK_ID.csv
+mv CHR_$SLURM_ARRAY_TASK_ID.csv.gz ..//AA_GzipOutputs/CHR_$SLURM_ARRAY_TASK_ID.csv.gz

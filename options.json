@@ -9,7 +9,7 @@
 	},
 	
 	"chrArray":{
-		"CHRpreprocess": "all",
+		"CHRpreprocess": [21,22],
 		"CHRanalysis": "all"
 	},
 

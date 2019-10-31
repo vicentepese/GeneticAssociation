@@ -288,10 +288,10 @@ def ProcessGenFile(GenFile, Stat, OutFile, Dosage, Exclude, chr, indexes, option
 					OutGen.write(line)
 		else:
 			GenLine = str(line).split(' ')
-			RsidHeader = GenLine[1]#' '.join(GenLine[:6])
+			posLine = GenLine[2]#' '.join(GenLine[:6])
 			if Dosage == 1:
 				Genos = ConvertGenDos(GenLine[5:], indexes)
-				ParsedLine = RsidHeader + ' ' + Genos.strip()
+				ParsedLine = posLine + ' ' + Genos.strip()
 				OutGen.write(ParsedLine+'\n')
 			else:
 				OutGen.write(line)
