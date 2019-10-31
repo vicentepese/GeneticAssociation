@@ -30,7 +30,7 @@ def loadReproData(filename):
 def GzipFileHandler(FileName, Read=True):
     if '.gz' in FileName:
         if Read is True:
-            OpenFile = gzip.open(FileName, 'rb')
+            OpenFile = gzip.open(FileName, 'rt', newline = '')
 
         else:
             OpenFile = gzip.open(FileName, 'wb')
@@ -45,11 +45,22 @@ def GzipFileHandler(FileName, Read=True):
 
 def loadCHRData(filename):
 
-    # Load file
+    # Open file in text mode
     OpenFile = GzipFileHandler(filename, Read=True)
-    CHR_data = pd.read_csv(filename, compression = 'gzip')
+    print("Reading association analysis outputs. This might take several minutes.")
+    reader = csv.reader(OpenFile)
 
-    return CHR_data
+    # Load file 
+    CHR_data = OrderedDict()
+    for row in reader:
+        if row.index('') == 0:
+            colnames = row[1:]
+        else:
+            
+
+
+
+    return reader
 
 
 def getMatches(CHR_data, repro_data):

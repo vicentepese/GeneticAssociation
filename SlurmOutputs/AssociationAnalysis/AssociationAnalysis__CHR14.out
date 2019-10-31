@@ -39,16 +39,3 @@
 [1] "14"
 SNPs before filtering: 2670086 
 SNPs after filtering: 337290 
-[1] "Analysis finished"
-[1] "Unlinking output"
-Analysis done in:  74.832  seconds 
-Detected eQTLs: 
-       snps        gene statistic       pvalue          FDR     beta
-1 106721995 IGHV3-23*03  66.03655 1.123330e-83 7.116949e-75 1.968884
-2 106722023 IGHV3-23*03  65.98692 1.208153e-83 7.116949e-75 1.967206
-3 106724765 IGHV3-23*03  64.87172 6.288739e-83 1.058443e-74 1.954724
-4 106724767 IGHV3-23*03  64.87172 6.288739e-83 1.058443e-74 1.954724
-5 106724774 IGHV3-23*03  64.87172 6.288739e-83 1.058443e-74 1.954724
-6 106724779 IGHV3-23*03  64.87172 6.288739e-83 1.058443e-74 1.954724
-[1] "Saving file"
-File saved in /scratch/users/vipese/GeneticAssociation/Outputs/CHR_14.csvNULL

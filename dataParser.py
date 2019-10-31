@@ -42,6 +42,8 @@ def argsParser():
 		# One chromosome with 2 digits
 		elif len(args.ChrIndex) > 1:
 			chrArray = ["CHR" + str(args.ChrIndex)]
+		elif len(args.ChrIndex) == 1:
+			chrArray = ["CHR" + str(args.ChrIndex)]
 
 	return chrArray
 
@@ -286,10 +288,10 @@ def ProcessGenFile(GenFile, Stat, OutFile, Dosage, Exclude, chr, indexes, option
 					OutGen.write(line)
 		else:
 			GenLine = str(line).split(' ')
-			RsidHeader = GenLine[2]#' '.join(GenLine[:6])
+			RsidHeader = GenLine[1]#' '.join(GenLine[:6])
 			if Dosage == 1:
 				Genos = ConvertGenDos(GenLine[5:], indexes)
-				ParsedLine = RsidHeader +' '+Genos.strip()
+				ParsedLine = RsidHeader + ' ' + Genos.strip()
 				OutGen.write(ParsedLine+'\n')
 			else:
 				OutGen.write(line)
@@ -354,7 +356,7 @@ def main(chrArray):
 		statPath = options['path']['genomFolder'] + statFile
 
 		# Initialize
-		outFile = options['path']['processedFolder'] + chr + '_' + 'imputeData.csv'
+		outFile = options['path']['processedFolder'] + chr + '_' + 'imputeData'
 		Dosage = 1
 		Exclude = 0
 		Log = options['logPath'] + str(chr)

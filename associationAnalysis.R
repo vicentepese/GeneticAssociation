@@ -51,7 +51,8 @@ norm.prot.data <- scale(prot.data)
 # Write if in options
 if (options$analysis$saveNorm == TRUE){
     print(CHR)
-    write.csv(norm.prot.data, file = paste(options$path$processedFolder, "CHR",as.character(CHR), "_", "normProtData.csv", sep = ''))
+    write.csv(norm.prot.data, file = paste(options$path$processedFolder,
+                                           "CHR",as.character(CHR), "_", "normProtData.csv", sep = ''))
 }
 
 ################## Analysis ###############
@@ -77,7 +78,7 @@ snps$fileSkipRows = 0;          # one row of column labels
 snps$fileSkipColumns = 1;       # one column of row labels
 snps$fileSliceSize = 2000;      # read file in slices of 2,000 rows
 try(
-    snps$LoadFile(paste(options$path$processedFolder,chrSnpFile , sep = ''), delimiter = '')
+    snps$LoadFile(paste(options$path$processedFolder,chrSnpFile , sep = ''), delimiter = ' ')
 )
 
 
