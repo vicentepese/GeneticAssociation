@@ -23,11 +23,11 @@ Multiple options have been included for both preprocessing (*genOptions*) and AA
 In order to run the data pre-processing or data parsing, `rundataParser.sh` must be executed, after the options have been selected. 
 
 Preprocessing consist on six major steps:
-    - **Data removal (optional)**: in this step, unnecessary files are deleted from the data folder. 
-    -  **Protein data pre-processing**: protein data is loaded and pre-processed. Each patient ID from the protein sequencing file is matched with their corresponding ID from the GWAS, as indicated by the file in options *GWAS_ID_file*.
-    - **Find patient IDs in the GWAS**: since the GWAS contains the information of more patients than in the protein data and in a different order, the indexes of the patients that appear in the protein data are taken as a variable. 
-    - **Patient ID reordering**: to match the order of the patients of the GWAS ID file and the protein file, the rows (patients) of the protein file are reordered as in the GWAS (same procedure is applied to the covariate data). This step and the previous one has been performed for each chromosome to avoid inconsistencies and errors and according to the *.sample* files for each chromosome. 
-    - **Process impute (SNP) data**: to avoid excessive computational power, the file is open in *write text* mode, and for each line, the probability of belonging to a specific allele is computed only for the indexes taken in the third step, and saved in a separate file. De novo, the computational power is reduced. 
-    - **Save files**: files are seved in the designed folder in `options.json`. 
+1. **Data removal (optional)**: in this step, unnecessary files are deleted from the data folder. 
+2. **Protein data pre-processing**: protein data is loaded and pre-processed. Each patient ID from the protein sequencing file is matched with their corresponding ID from the GWAS, as indicated by the file in options *GWAS_ID_file*.
+3. **Find patient IDs in the GWAS**: since the GWAS contains the information of more patients than in the protein data and in a different order, the indexes of the patients that appear in the protein data are taken as a variable. 
+4. **Patient ID reordering**: to match the order of the patients of the GWAS ID file and the protein file, the rows (patients) of the protein file are reordered as in the GWAS (same procedure is applied to the covariate data). This step and the previous one has been performed for each chromosome to avoid inconsistencies and errors and according to the *.sample* files for each chromosome. 
+5. **Process impute (SNP) data**: to avoid excessive computational power, the file is open in *write text* mode, and for each line, the probability of belonging to a specific allele is computed only for the indexes taken in the third step, and saved in a separate file. De novo, the computational power is reduced. 
+6. **Save files**: files are seved in the designed folder in `options.json`. 
 
 With the performance of the aforementioned steps, the pre-processing of the data is done, and the analysis can be subsequently performed. 
