@@ -65,11 +65,11 @@ def loadCHRData(filename):
     return CHR_data, colnames
 
 
-def rsID2CHRnum(repro_data):
+def rsID2CHRnum(repro_data, options):
 
     # Get Ids
 
-    conn = sqlite3.connect('/scratch/users/vipese/GeneticAssociation/Resources/refdb.dbsnp')
+    conn = sqlite3.connect(options["file"]["refdb"])
     cur = conn.cursor()
     cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
 
@@ -77,11 +77,17 @@ def rsID2CHRnum(repro_data):
     names = list(map(lambda x: x[0], cursor.description))
 
     rsID_CHR_dict = OrderedDict()
+    print("Converting rsID to chromosome number. This might take several minutes.")
     for row in cursor:
         if row[1] in list(repro_data.keys()):
             ins = repro_data[row[1]]
-            ins = ins.insert(0, row[2])
+            ins.insert(0, row[2])
             repro_data[row[1]] = ins
+
+    # Save data
+    with open("Data/checkReproDataMod.csv" , 'w') as outFile:
+        csv_writer = csv.writer(outFile)
+        csv_writer.writerow(repro_data)
 
     return None
 
@@ -111,7 +117,7 @@ def main():
     repro_data = loadReproData(options['file']["checkRepro"])
 
     # Convert rsID to chromosume number
-    rsID2CHRnum(repro_data)
+    rsID2CHRnum(repro_data, options)
 
 
     # Load association analysis data

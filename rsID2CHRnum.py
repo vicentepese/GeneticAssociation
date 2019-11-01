@@ -1,5 +1,5 @@
 import sqlite3
-conn = sqlite3.connect('/scratch/users/vipese/GeneticAssociation/Resources/refdb.dbsnp')
+conn = sqlite3.connect('/scratch/users/vipese/GeneticAssociation/Data/refdb.dbsnp')
 cur = conn.cursor()
 cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
 

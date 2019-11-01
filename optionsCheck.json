@@ -4,13 +4,15 @@
     },
 
     "folder":{
-        "checkRepro":"ReproData/",
+        "checkRepro":"Data/",
         "chrDataFolder": "/scratch/users/vipese/GeneticAssociation/AA_GzipOutputs/",
-        "reproDataFolder": "/home/users/vipese/Projects/GeneticAssociation/"
+        "reproDataFolder": "/home/users/vipese/Projects/GeneticAssociation/",
+        "dataFolder": "/home/aditya/Documents/GeneticAssociation/Data/"
     },
 
     "file":{
-        "checkRepro":"ReproData/ng.3625-S4.xlsx"
+        "checkRepro":"Data/ng.3625-S4.xlsx",
+        "refdb": "Data/refdb.dbsnp"
     }
 
 }
