@@ -10,7 +10,7 @@
 	
 	"chrArray":{
 		"CHRpreprocess": [21,22],
-		"CHRanalysis": "all"
+		"CHRanalysis": [1]
 	},
 
 	"GWAS_ID_file": "GWAS_IDS.csv",

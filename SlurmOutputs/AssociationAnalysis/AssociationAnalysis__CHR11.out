@@ -41,7 +41,7 @@ SNPs before filtering: 4068349
 SNPs after filtering: 503261 
 [1] "Analysis finished"
 [1] "Unlinking output"
-Analysis done in:  112.671  seconds 
+Analysis done in:  115.27  seconds 
 Detected eQTLs: 
                       snps                   gene statistic       pvalue
 1 rs377078874:92902325:A:G IGHV3-13*03 & IGHJ5*02  37.80529 1.212637e-60

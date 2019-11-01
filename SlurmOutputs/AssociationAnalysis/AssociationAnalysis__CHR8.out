@@ -41,7 +41,7 @@ SNPs before filtering: 4623798
 SNPs after filtering: 552788 
 [1] "Analysis finished"
 [1] "Unlinking output"
-Analysis done in:  116.512  seconds 
+Analysis done in:  117.2  seconds 
 Detected eQTLs: 
                       snps        gene statistic       pvalue          FDR
 1    rs318252:90207562:T:C IGHV1-69*05  56.55614 3.488795e-77 2.924324e-68

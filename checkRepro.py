@@ -98,7 +98,7 @@ def getMatches(CHR_data, repro_data):
             # Get index
             idx = list(repro_data.keys()).index(snp)
 
-            # Check if
+            # Check if6
 
 
 def main():
