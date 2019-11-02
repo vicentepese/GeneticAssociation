@@ -59,8 +59,7 @@ def loadCHRData(filename):
     next(reader)
     i = 0
     for row in reader:
-        CHR_data[row[1].split(':')[0]] =  [row[1].split(':')[1]].extend(row[2:])
-        i += 1
+        CHR_data[row[1]] = row[2:]
 
     return CHR_data, colnames
 
@@ -76,7 +75,6 @@ def rsID2CHRnum(repro_data, options):
     cursor = conn.execute('select * from refvariants')
     names = list(map(lambda x: x[0], cursor.description))
 
-    rsID_CHR_dict = OrderedDict()
     print("Converting rsID to chromosome number. This might take several minutes.")
     for row in cursor:
         if row[1] in list(repro_data.keys()):
@@ -86,13 +84,19 @@ def rsID2CHRnum(repro_data, options):
 
     # Save data
     with open("Data/checkReproDataMod.csv" , 'w') as outFile:
-        csv_writer = csv.writer(outFile)
-        csv_writer.writerow(repro_data)
+        for key in repro_data.keys():
+            repro_data[key].insert(0, key)
+            repro_data[key] = [str(itm) for itm in repro_data[key]]
+            line = ", ".join(repro_data[key])
+            outFile.write(line + "\n")
 
-    return None
+    print("rsID successfully converted to chromosome number")
+    return repro_data
+    
 
 
-def getMatches(CHR_data, repro_data):
+def getMatches(repro_data, CHR_data):
+
 
     # Get genes
     snps_pos = CHR_data['snps']
@@ -113,18 +117,27 @@ def main():
     with open("optionsCheck.json", 'r') as jsonFile:
         options = json.load(jsonFile)
 
-    # Load "reproducibility data"
-    repro_data = loadReproData(options['file']["checkRepro"])
+    # If reproducibility data not processed, then process. Else load
+    if "checkReproDataMod.csv" not in os.listdir("./Data/"):
+        # Load "reproducibility data"
+        repro_data = loadReproData(options['file']["checkRepro"])
 
-    # Convert rsID to chromosume number
-    rsID2CHRnum(repro_data, options)
+        # Convert rsID to chromosume number
+        repro_data = rsID2CHRnum(repro_data, options)
+    else:
+        print("Reproducibility data loaded")
+        with open(options['file']['reproDatamod'], 'r') as infile:
+            csv_reader = csv.reader(infile)
+            repro_data = dict()
+            for row in csv_reader:
+                repro_data[row[0]] = row[1:]
 
-
+    
     # Load association analysis data
-    CHR_data = loadCHRData('CHR_14.csv.gz')
+    CHR_data = loadCHRData(options['file']['chrData'])
 
     # Get matches
-    getMatches(CHR_data, repro_data)
+    getMatches(repro_data, CHR_data)
 
     # Load chromosome data
     print('stop')

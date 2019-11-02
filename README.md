@@ -31,3 +31,14 @@ Preprocessing consist on six major steps:
 6. **Save files**: files are seved in the designed folder in `options.json`. 
 
 With the performance of the aforementioned steps, the pre-processing of the data is done, and the analysis can be subsequently performed. 
+
+### Association Analysis 
+
+The AA is performed in `associationAnalysis.R` in a similar fashion as the pre-processing --- each chromosome will be sent as an independent *slurm* job. 
+
+The protein data is normalazed using the R `scale` command, and further saved in a separate file. A linear model is fit using the SNPS data (*impute*), the protein data and the covariates. The results are saved in the folder defined in `options.json`
+
+### Reproducibility check 
+
+In order to corroborate the outcome, the results are compared to a similar study. After downloading the data from the study, the chromosome number is computed based on the rsID for each gene. Then, for the chromosomes in which the aforementioned studies found significance, matches between SNP (chromosome number and location)-protein are found. 
+
