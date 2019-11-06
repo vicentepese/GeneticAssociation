@@ -33,7 +33,7 @@ def loadReproData(filename):
 def GzipFileHandler(FileName, Read=True):
     if '.gz' in FileName:
         if Read is True:
-            OpenFile = gzip.open(FileName, 'rt', newline = '')
+            OpenFile = gzip.open(FileName, 'rt', newline='')
 
         else:
             OpenFile = gzip.open(FileName, 'wb')
@@ -94,21 +94,98 @@ def rsID2CHRnum(repro_data, options):
     return repro_data
     
 
+def getMatches(repro_data_old, options):
 
-def getMatches(repro_data, CHR_data):
+
+    # Open data from chromosome
+    CHR_openFile = GzipFileHandler(options['file']['chrData'])
+
+    # Reformat repro_data
+    repro_data = dict()
+    for key in list(repro_data_old.keys()):
+        rp = [repro_data_old[key][1][1:]]
+        for item in repro_data_old[key][3:]:
+            rp.append(item)
+        repro_data[repro_data_old[key][2][1:]] = rp
+
+    # Get positions 
+    snp_pos = list(repro_data.keys())
+    # prot_genes = list(repro_data[key][1] for key in list(repro_data.keys()))
 
 
-    # Get genes
-    snps_pos = CHR_data['snps']
+    # For each SNP of the AA data, check if it matches the position of the chromosome
+    matches = dict()
+    matches_nonGene = dict()
+    pos_matches = {'Position': ['Gene', 'Repro_Gene']}
+    print("Checking matches reproducibility. This might take several minutes")
+    count = 1
+    pos_match_count = 0
+    gene_match = 0
 
-    # Check if snps is among the significant results
-    for snp in snps_pos:
-        if snp in list(repro_data.keys()):
+    for snp in CHR_openFile:
+        # print("Current line: %i" % count, end='\r')
 
-            # Get index
-            idx = list(repro_data.keys()).index(snp)
+        # Find if there is a match in the SNP position
+        if any(snp.split(" ")[2] in pos for pos in snp_pos):
+            pos_match_count += 1
+            repro_data_gene = []
+            repro_data_nongene = []
+            print("%i position match found \n" % pos_match_count)
 
-            # Check if6
+            # If the position and the gene matches
+            repro_data_gene = []
+            repro_data_nongene = []
+            if repro_data[snp.split(" ")[2]][0] in snp.split("\"")[3]:
+                repro_data_gene.append(repro_data[snp.split(" ")[2]])
+            else:
+                repro_data_nongene.append(repro_data[snp.split(" ")[2]])
+            
+            if len(repro_data_gene) > 0:
+                rp = []
+                for item in repro_data_gene[0]:
+                    rp.append(item)
+                matches[snp.split(" ")[2]] = [snp.split("\"")[3], rp]
+            if len(repro_data_nongene) > 0:
+                rp = [snp.split("\"")[3]]
+                for item in repro_data_nongene[0]:
+                    rp.append(item)
+                matches_nonGene[snp.split(" ")[2]] = rp
+
+            # # Check by rsID
+            # for repro_rsID in list(repro_data.keys()):
+
+            #     # Find rsID that matches the position
+            #     if snp.split(" ")[2] in repro_data[repro_rsID[2]:
+
+            #         # If there is a match in postion and in the gene
+            #         if repro_data[repro_rsID][1] in snp.split("\"")[3]:
+            #             repro_data_gene.append(repro_data[key][1][1:])
+
+            #         # If there is a macth in the position but not in the gene 
+            #         else: 
+            #             repro_data_nongene.append(repro_data[key][1][1:])
+
+            # # Save the match 
+            # if len(repro_data_gene > 0):
+            #     matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_gene]
+            # if len(repro_data_nongene > 0):
+            #     matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_nongene]
+
+        count += 1
+    print("Reproducibility checked")
+    print("Number of matches found: %i" % len(matches))
+
+    # Save matches 
+    with open('matches.csv', 'w' ) as matches_out:
+        for (key, val) in matches.items():
+            matches_out.write(key + ", " + ', '.join(val) + ' \n')
+
+    with open('matches_nonGene.csv', 'w' ) as matches_out:
+        for (key, val) in matches_nonGene.items():
+            matches_out.write(key + ", " + ', '.join(val) + ' \n')
+
+
+    return matches        
 
 
 def main():
@@ -132,15 +209,32 @@ def main():
             for row in csv_reader:
                 repro_data[row[0]] = row[1:]
 
-    
-    # Load association analysis data
-    CHR_data = loadCHRData(options['file']['chrData'])
 
     # Get matches
-    getMatches(repro_data, CHR_data)
+    matches = getMatches(repro_data, options)
 
     # Load chromosome data
     print('stop')
 
 
 main()
+
+  # if any(repro_data[key][1] in snp.split("\"")[3] for key in list(repro_data.keys())):
+
+            #     # If so, save the position
+            #     gene_match += 1
+            #     print("Position %s match with %s. Gene matches: %i \n" % (snp.split(" ")[2], snp.split("\"")[3], gene_match))
+            #     repro_data_gene = []
+            #     for key in list(repro_data.keys()):
+            #         if snp.split(" ")[2] in repro_data[key][2]:
+            #             repro_data_gene.append(repro_data[key][1][1:])
+
+            #     # Save the match 
+            #     matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_gene]
+            # else:
+            #     print("No match found for position %s \n" % snp.split(" ")[2] )
+            #     repro_data_gene = []
+            #     for key in list(repro_data.keys()):
+            #         if snp.split(" ")[2] in repro_data[key][2] :
+            #             repro_data_gene.append(repro_data[key][1][1:])
+            #     pos_matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_gene]

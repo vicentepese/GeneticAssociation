@@ -14,7 +14,7 @@
         "checkRepro":"Data/ng.3625-S4.xlsx",
         "refdb": "Data/refdb.dbsnp",
         "reproDatamod": "Data/checkReproDataMod.csv",
-        "chrData": "Data/CHR_6.csv.gz"
+        "chrData": "Data/CHR6_filtdef.gz"
     }
 
 }
