@@ -177,12 +177,18 @@ def getMatches(repro_data_old, options):
 
     # Save matches 
     with open('matches.csv', 'w' ) as matches_out:
-        for (key, val) in matches.items():
+        for key, val in matches.items():
             matches_out.write(key + ", " + ', '.join(val) + ' \n')
 
     with open('matches_nonGene.csv', 'w' ) as matches_out:
-        for (key, val) in matches_nonGene.items():
+        for key, val in matches_nonGene.items():
             matches_out.write(key + ", " + ', '.join(val) + ' \n')
+    
+    for key in list(matches.keys()):
+        valn = [matches[key][0]]
+        for val in matches[key][1]:
+            valn.append(val)
+        matches[key] = valn
 
 
     return matches        
