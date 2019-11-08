@@ -310,7 +310,6 @@ def main(chrArray):
 	with open("options.json", "r") as jsonFile:
 		options = json.load(jsonFile)
 
-	# TODO: recheck how to do this
 	# Remove unnecesary data
 	removeData(options)
 

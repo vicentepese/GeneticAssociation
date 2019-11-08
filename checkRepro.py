@@ -93,8 +93,6 @@ def getMatches(repro_data, options):
     # Run first with dicts, change to list of lists and see if there is any difference
     matches = list()
     print("Checking matches reproducibility. This might take several minutes")
-    pos_match_count = 0
-
     for snp in CHR_openFile:
 
         # Find if there is a match in the SNP position
@@ -151,4 +149,5 @@ def main():
     getMatches(repro_data, options)
 
 
-main()
+if __name__ == "__main__":
+    main()
