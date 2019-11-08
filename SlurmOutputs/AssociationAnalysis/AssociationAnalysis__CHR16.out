@@ -41,7 +41,7 @@ SNPs before filtering: 2714556
 SNPs after filtering: 318126 
 [1] "Analysis finished"
 [1] "Unlinking output"
-Analysis done in:  63.063  seconds 
+Analysis done in:  75.676  seconds 
 Detected eQTLs: 
       snps                   gene statistic       pvalue          FDR
 1 76519345 IGHV3-13*03 & IGHJ5*02  43.49625 2.480914e-66 2.756826e-57
@@ -58,4 +58,3 @@ Detected eQTLs:
 5 0.010589403
 6 0.001098549
 [1] "Saving file"
-File saved in /scratch/users/vipese/GeneticAssociation/Outputs/CHR_16.csvNULL

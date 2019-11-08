@@ -37,25 +37,3 @@
 #   `115A11` <dbl>, …
 [1] "Normalizing data"
 [1] "12"
-SNPs before filtering: 3890271 
-SNPs after filtering: 495502 
-[1] "Analysis finished"
-[1] "Unlinking output"
-Analysis done in:  115.894  seconds 
-Detected eQTLs: 
-      snps                   gene statistic       pvalue          FDR
-1 27023797 IGHV3-38*03 & IGHJ1*01  37.19642 5.449627e-60 9.432153e-51
-2 27904206 IGHV3-38*03 & IGHJ1*01  35.83801 1.684310e-58 1.457592e-49
-3 28092733 IGHV3-38*03 & IGHJ1*01  34.88804 1.984127e-57 1.144701e-48
-4 27898585 IGHV3-38*03 & IGHJ1*01  33.40302 1.053741e-55 4.559507e-47
-5 12416865 IGHV3-53*01 & IGHJ4*03  31.85153 7.856317e-54 2.719525e-45
-6 14257831 IGHV3-33*01 & IGHJ2*01  31.63001 1.474670e-53 4.253902e-45
-         beta
-1 0.001107146
-2 0.001079212
-3 0.001099249
-4 0.001065474
-5 0.280485956
-6 0.506323871
-[1] "Saving file"
-File saved in /scratch/users/vipese/GeneticAssociation/Outputs/CHR_12.csvNULL

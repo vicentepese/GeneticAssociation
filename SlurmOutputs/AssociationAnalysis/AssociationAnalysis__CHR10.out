@@ -39,23 +39,3 @@
 [1] "10"
 SNPs before filtering: 4014671 
 SNPs after filtering: 520740 
-[1] "Analysis finished"
-[1] "Unlinking output"
-Analysis done in:  110.399  seconds 
-Detected eQTLs: 
-       snps                   gene statistic       pvalue          FDR
-1  90365329 IGHV1-68*01 & IGHJ1*01  50.39531 2.169697e-72 3.946558e-63
-2  73774706            IGHV1-69*05  48.40949 9.957492e-71 9.056064e-62
-3 126180583 IGHV3-38*03 & IGHJ1*01  46.84001 2.272370e-69 1.377772e-60
-4  13235498 IGHV1-69*13 & IGHJ6*04  43.40050 3.052759e-66 1.388200e-57
-5  13235498 IGHV1-69*06 & IGHJ6*04  43.06549 6.327998e-66 2.302056e-57
-6  50630302 IGHV3-13*03 & IGHJ4*02  39.79629 1.027920e-62 3.116215e-54
-          beta
-1 0.0007231123
-2 1.3589070942
-3 0.0011218190
-4 0.5576512182
-5 0.4310597791
-6 0.0010665588
-[1] "Saving file"
-File saved in /scratch/users/vipese/GeneticAssociation/Outputs/CHR_10.csvNULL

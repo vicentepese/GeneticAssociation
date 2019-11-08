@@ -139,12 +139,11 @@ unlink(output_filename);
 cat('Analysis done in: ', me$time.in.sec, ' seconds', '\n');
 cat('Detected eQTLs:', '\n');
 head(me$all$eqtls)
-me$all$eqtls$snps <- as.numeric(me$all$eqtls$snps) 
 
 # Write 
 print("Saving file")
 output_filename <- paste(options$path$outputs, "CHR_", as.character(CHR),".csv", sep = '')
-write_csv(me$all$eqtls, file = output_filename)
+write_csv(me$all$eqtls, output_filename)
 print(cat("File saved in", output_filename ))
 
 

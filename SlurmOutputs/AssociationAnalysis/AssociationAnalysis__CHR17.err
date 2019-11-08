@@ -1183,11 +1183,11 @@ Rows read: 2,000
 Rows read: 3493 done.
 Rows read: 9 done.
 Processing covariates
-Task finished in 0.00200000000000955 seconds
+Task finished in 0.00199999999998113 seconds
 Processing gene expression data (imputation, residualization)
-Task finished in 0.070999999999998 seconds
+Task finished in 0.061000000000007 seconds
 Creating output file(s)
-Task finished in 0.00799999999998136 seconds
+Task finished in 0.00800000000000978 seconds
 Performing eQTL analysis
  0.35% done, 183,086 eQTLs
  0.71% done, 323,528 eQTLs
@@ -1467,9 +1467,12 @@ Performing eQTL analysis
 99.28% done, 49,390,735 eQTLs
 99.64% done, 49,552,933 eQTLs
 100.00% done, 49,669,038 eQTLs
-Task finished in 377.938 seconds
+Task finished in 397.539 seconds
 
 Warning message:
 In Matrix_eQTL_main(snps = snps, gene = gene, cvrt = cvrt, output_file_name = output_file_name,  :
   Warning: pvOutputThreshold may be too large.
 Expected number of findings > 48497685.25
+Error in write_csv(me$all$eqtls, file = output_filename) : 
+  unused argument (file = output_filename)
+Execution halted

@@ -42,3 +42,5 @@ The protein data is normalazed using the R `scale` command, and further saved in
 
 In order to corroborate the outcome, the results are compared to a similar study. After downloading the data from the study, the chromosome number is computed based on the rsID for each gene. Then, for the chromosomes in which the aforementioned studies found significance, matches between SNP (chromosome number and location)-protein are found. 
 
+In this case, the aforementioned study only found significance association in chromosome 6, thus the reproducibility is solely checked in such chromosome. Our results replicate 15% of the significant associations in the aforementioned study. Their results are fully available online.
+
