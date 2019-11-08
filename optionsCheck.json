@@ -4,15 +4,15 @@
     },
 
     "folder":{
-        "checkRepro":"Data/",
-        "chrDataFolder": "/scratch/users/vipese/GeneticAssociation/AA_GzipOutputs/",
+        "Data":"Data/",
+        "chrDataFolder": "/scratch/users/vipese/GeneticAssociation/SaveAAOutputs/",
         "reproDataFolder": "/home/users/vipese/Projects/GeneticAssociation/",
         "dataFolder": "/home/aditya/Documents/GeneticAssociation/Data/"
     },
 
     "file":{
         "checkRepro":"Data/ng.3625-S4.xlsx",
-        "refdb": "Data/refdb.dbsnp",
+        "refdb": "/scratch/users/vipese/GeneticAssociation/Resources/refdb.dbsnp",
         "reproDatamod": "Data/checkReproDataMod.csv",
         "chrData": "Data/CHR6_filtdef.gz"
     }

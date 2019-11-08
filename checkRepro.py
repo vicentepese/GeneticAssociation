@@ -21,6 +21,7 @@ def loadReproData(filename):
         for sheet_name in xlFile.sheet_names
     }
 
+    # Reorganize dictionnary to create output
     pre_repro_data = pre_repro_data['MHC long range associations']
     repro_data = dict()
     for val in pre_repro_data.values:
@@ -31,12 +32,16 @@ def loadReproData(filename):
     return repro_data
 
 def GzipFileHandler(FileName, Read=True):
+
+    # If file is in gz format
     if '.gz' in FileName:
         if Read is True:
             OpenFile = gzip.open(FileName, 'rt', newline='')
 
         else:
             OpenFile = gzip.open(FileName, 'wb')
+
+    # Else
     else:
         if Read is True:
             OpenFile = open(FileName, 'r')
@@ -46,36 +51,19 @@ def GzipFileHandler(FileName, Read=True):
 
     return OpenFile
 
-def loadCHRData(filename):
-
-    # Open file in text mode
-    OpenFile = GzipFileHandler(filename, Read=True)
-    print("Reading association analysis outputs. This might take several minutes.")
-    reader = csv.reader(OpenFile)
-
-    # Load file
-    CHR_data = OrderedDict()
-    colnames = ["position", "gene", "statistic", "pvalue", "FDR", "beta"]
-    next(reader)
-    i = 0
-    for row in reader:
-        CHR_data[row[1]] = row[2:]
-
-    return CHR_data, colnames
-
-
 def rsID2CHRnum(repro_data, options):
 
-    # Get Ids
-
+    # Connect to SQL dataset containing rsID and CHR number
     conn = sqlite3.connect(options["file"]["refdb"])
     cur = conn.cursor()
     cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
-
     cursor = conn.execute('select * from refvariants')
-    names = list(map(lambda x: x[0], cursor.description))
 
+    # Print: verbose
     print("Converting rsID to chromosome number. This might take several minutes.")
+
+    # For each rsID in dataset, find if in reproData and take CHR number
+    # TODO: see if replacing insert with extend allows to remove reorganization in getMatches
     for row in cursor:
         if row[1] in list(repro_data.keys()):
             ins = repro_data[row[1]]
@@ -89,18 +77,18 @@ def rsID2CHRnum(repro_data, options):
             repro_data[key] = [str(itm) for itm in repro_data[key]]
             line = ", ".join(repro_data[key])
             outFile.write(line + "\n")
-
     print("rsID successfully converted to chromosome number")
+
     return repro_data
     
 
 def getMatches(repro_data_old, options):
 
-
     # Open data from chromosome
     CHR_openFile = GzipFileHandler(options['file']['chrData'])
 
     # Reformat repro_data
+    # TODO: see rsID2CHRNUM, remove if necessary 
     repro_data = dict()
     for key in list(repro_data_old.keys()):
         rp = [repro_data_old[key][1][1:]]
@@ -110,8 +98,6 @@ def getMatches(repro_data_old, options):
 
     # Get positions 
     snp_pos = list(repro_data.keys())
-    # prot_genes = list(repro_data[key][1] for key in list(repro_data.keys()))
-
 
     # For each SNP of the AA data, check if it matches the position of the chromosome
     matches = dict()
@@ -151,26 +137,6 @@ def getMatches(repro_data_old, options):
                     rp.append(item)
                 matches_nonGene[snp.split(" ")[2]] = rp
 
-            # # Check by rsID
-            # for repro_rsID in list(repro_data.keys()):
-
-            #     # Find rsID that matches the position
-            #     if snp.split(" ")[2] in repro_data[repro_rsID[2]:
-
-            #         # If there is a match in postion and in the gene
-            #         if repro_data[repro_rsID][1] in snp.split("\"")[3]:
-            #             repro_data_gene.append(repro_data[key][1][1:])
-
-            #         # If there is a macth in the position but not in the gene 
-            #         else: 
-            #             repro_data_nongene.append(repro_data[key][1][1:])
-
-            # # Save the match 
-            # if len(repro_data_gene > 0):
-            #     matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_gene]
-            # if len(repro_data_nongene > 0):
-            #     matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_nongene]
-
         count += 1
     print("Reproducibility checked")
     print("Number of matches found: %i" % len(matches))
@@ -201,8 +167,9 @@ def main():
         options = json.load(jsonFile)
 
     # If reproducibility data not processed, then process. Else load
-    if "checkReproDataMod.csv" not in os.listdir("./Data/"):
-        # Load "reproducibility data"
+    if "checkReproDataMod.csv" not in os.listdir(options['folder']['Data']):
+
+        # Load original "reproducibility data"
         repro_data = loadReproData(options['file']["checkRepro"])
 
         # Convert rsID to chromosume number
@@ -219,28 +186,5 @@ def main():
     # Get matches
     matches = getMatches(repro_data, options)
 
-    # Load chromosome data
-    print('stop')
-
 
 main()
-
-  # if any(repro_data[key][1] in snp.split("\"")[3] for key in list(repro_data.keys())):
-
-            #     # If so, save the position
-            #     gene_match += 1
-            #     print("Position %s match with %s. Gene matches: %i \n" % (snp.split(" ")[2], snp.split("\"")[3], gene_match))
-            #     repro_data_gene = []
-            #     for key in list(repro_data.keys()):
-            #         if snp.split(" ")[2] in repro_data[key][2]:
-            #             repro_data_gene.append(repro_data[key][1][1:])
-
-            #     # Save the match 
-            #     matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_gene]
-            # else:
-            #     print("No match found for position %s \n" % snp.split(" ")[2] )
-            #     repro_data_gene = []
-            #     for key in list(repro_data.keys()):
-            #         if snp.split(" ")[2] in repro_data[key][2] :
-            #             repro_data_gene.append(repro_data[key][1][1:])
-            #     pos_matches[snp.split(" ")[2]] = [snp.split("\"")[3], repro_data_gene]

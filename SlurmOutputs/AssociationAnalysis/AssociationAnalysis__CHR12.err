@@ -1957,11 +1957,11 @@ Rows read: 2,000
 Rows read: 3493 done.
 Rows read: 9 done.
 Processing covariates
-Task finished in 0.00200000000000955 seconds
+Task finished in 0.00199999999995271 seconds
 Processing gene expression data (imputation, residualization)
-Task finished in 0.0589999999999691 seconds
+Task finished in 0.0649999999999977 seconds
 Creating output file(s)
-Task finished in 0.0130000000000337 seconds
+Task finished in 0.0100000000000477 seconds
 Performing eQTL analysis
  0.20% done, 210,890 eQTLs
  0.40% done, 366,662 eQTLs
@@ -2459,7 +2459,7 @@ Performing eQTL analysis
 99.59% done, 87,093,109 eQTLs
 99.79% done, 87,209,184 eQTLs
 100.00% done, 87,296,224 eQTLs
-Task finished in 723.339 seconds
+Task finished in 752.975 seconds
 
 Warning message:
 In Matrix_eQTL_main(snps = snps, gene = gene, cvrt = cvrt, output_file_name = output_file_name,  :

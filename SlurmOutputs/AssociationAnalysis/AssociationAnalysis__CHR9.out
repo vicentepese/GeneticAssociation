@@ -41,21 +41,14 @@ SNPs before filtering: 3577661
 SNPs after filtering: 447230 
 [1] "Analysis finished"
 [1] "Unlinking output"
-Analysis done in:  100.441  seconds 
+Analysis done in:  100.814  seconds 
 Detected eQTLs: 
-                    snps                   gene statistic       pvalue
-1  rs4742124:5842130:C:G            IGHV1-69*05 -51.39614 3.324489e-73
-2  rs6415797:6136150:G:A            IGHV1-69*05 -50.87722 8.755405e-73
-3 rs13296163:6977658:G:A IGHV1-69*06 & IGHJ6*04  41.86341 9.030388e-65
-4 rs13296163:6977658:G:A IGHV1-69*13 & IGHJ6*04  41.53482 1.889918e-64
-5  rs6415797:6136150:G:A IGHV1-69*05 & IGHJ4*02 -41.46919 2.191670e-64
-6  rs4742124:5842130:C:G IGHV1-69*05 & IGHJ4*02 -41.21787 3.872323e-64
-           FDR       beta
-1 5.193432e-64 -2.3167792
-2 6.838735e-64 -2.3118104
-3 4.702347e-56  0.4261569
-4 6.847542e-56  0.5508597
-5 6.847542e-56 -0.9293384
-6 1.008207e-55 -0.9306813
+     snps                   gene statistic       pvalue          FDR       beta
+1 5842130            IGHV1-69*05 -51.39614 3.324489e-73 5.193432e-64 -2.3167792
+2 6136150            IGHV1-69*05 -50.87722 8.755405e-73 6.838735e-64 -2.3118104
+3 6977658 IGHV1-69*06 & IGHJ6*04  41.86341 9.030388e-65 4.702347e-56  0.4261569
+4 6977658 IGHV1-69*13 & IGHJ6*04  41.53482 1.889918e-64 6.847542e-56  0.5508597
+5 6136150 IGHV1-69*05 & IGHJ4*02 -41.46919 2.191670e-64 6.847542e-56 -0.9293384
+6 5842130 IGHV1-69*05 & IGHJ4*02 -41.21787 3.872323e-64 1.008207e-55 -0.9306813
 [1] "Saving file"
 File saved in /scratch/users/vipese/GeneticAssociation/Outputs/CHR_9.csvNULL

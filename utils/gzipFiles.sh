@@ -9,5 +9,5 @@
 #SBATCH --array=1-22
 
 cd /scratch/users/vipese/GeneticAssociation/Outputs/
-pigz CHR_$SLURM_ARRAY_TASK_ID.csv
+pigz CHR_$SLURM_ARRAY_TASK_ID.csv CHR_$SLURM_ARRAY_TASK_ID.csv.gz
 mv CHR_$SLURM_ARRAY_TASK_ID.csv.gz ..//AA_GzipOutputs/CHR_$SLURM_ARRAY_TASK_ID.csv.gz
