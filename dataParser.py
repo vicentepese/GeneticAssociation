@@ -16,35 +16,28 @@ def argsParser():
 	parser = argparse.ArgumentParser(description='A script that cleans the  oxforf gen file')
 
 	# Add arguments
-	parser.add_argument('-ChrIndex', help= 'int: number of the chromosome to be parsed', required=False)
+	parser.add_argument('-ChrIndex', help= 'int: number of the chromosome to be parsed. Only for slurm', required=False)
 
 	# Initialize variables
 	args = parser.parse_args()
 
+	# If no CHR specified, analyze as specified in options
 	if not args.ChrIndex:
-		chrArray = list()
-		for s in [1,22]:
-			chrArray.append("CHR" + str(s))
+		# Load options
+		with open("options.json", "r") as jsonFile:
+			options = json.load(jsonFile)
+		if isinstance(options['chrArray']['CHRpreprocess'], int):
+			chrArray = ["CHR" + str(options)]
+		else: 
+			chrArray = ["CHR" + str(s) for s in options['chrArray']['CHRpreprocess']]
 
-	# Check if multiple chromosomes were considered
-	# TODO: this has to be changed -- include slurm options
-	# Multiple separated by comma
-	else:
-		if ',' in args.ChrIndex:
-			args = str(args.ChrIndex)
-			chrArray = args.split(',')
-			chrArray = list("CHR" + str(s) for s in chrArray)
-		# Range of chromosomes
-		elif '-' in args.ChrIndex:
-			args = str(args.ChrIndex)
-			args = args.split('-')
-			chrArray = np.arange(args[0], args[1]+1)
-			chrArray = list("CHR" + str(chr) for chr in chrArray)
-		# One chromosome with 2 digits
-		elif len(args.ChrIndex) > 1:
-			chrArray = ["CHR" + str(args.ChrIndex)]
-		elif len(args.ChrIndex) == 1:
-			chrArray = ["CHR" + str(args.ChrIndex)]
+	# Else, analyze the inputed chromosome (slurm)
+	elif len(args.ChrIndex) > 1:
+		chrArray = ["CHR" + str(args.ChrIndex)]
+		print(" Len > 1" + chrArray)
+	elif len(args.ChrIndex) == 1:
+		print("Len = 1 " + chrArray)
+		chrArray = ["CHR" + str(args.ChrIndex)]
 
 	return chrArray
 
@@ -319,7 +312,7 @@ def main(chrArray):
 
 	# TODO: recheck how to do this
 	# Remove unnecesary data
-	# removeData(options)
+	removeData(options)
 
 	# List files
 	genomFiles = os.listdir(options['path']['genomFolder'])

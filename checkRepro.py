@@ -103,16 +103,14 @@ def getMatches(repro_data, options):
             # Find the idxs
             idxs = np.where(snp_pos == snp.split(",")[0])  
 
-            pos_match_count += 1
-            # print("%i position match found \n" % pos_match_count)
-
             # For each position match
             for idx in np.nditer(idxs):
 
                 # Check if the gene matches as well and append
                 if repro_data[idx][1] in snp.split(',')[1]:
-                    print("Position %s matches with gene %s as %s" % (repro_data[idx][3], repro_data[idx][1], snp.split(',')[1]))
-                    matches.append([repro_data[idx][3], repro_data[idx][1]] + snp.split(",")[1:] )
+                    if '&' not in snp.split(',')[1]:
+                        print("Position %s matches with gene %s as %s" % (repro_data[idx][3], repro_data[idx][1], snp.split(',')[1]))
+                        matches.append([repro_data[idx][3], repro_data[idx][1]] + snp.split(",")[1:] )
             
     print("Reproducibility checked")
     print("Number of matches found: %i" % len(matches))

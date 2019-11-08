@@ -2,9 +2,9 @@
 
 ## Introduction 
 
-This repository was designed to perform an Association Analysis (AA) between Single Nucleotide Polymorphisms (SNP) and protein sequencing expression genes in peripheral blood cells. Firstly, a files (SNP and protein files) are pre-processed in `dataParser.py` to be further analyzed in `associationAnalysis.R`.
+This repository was designed to perform an Association Analysis (AA) between Single Nucleotide Polymorphisms (SNP) and protein sequencing expression genes in peripheral blood cells. Firstly, files (SNP and protein files) are pre-processed in `dataParser.py` to be further analyzed in `associationAnalysis.R`.
 
-This pipeline has been designed to function in cloud computer services -- such as the one available at Stanford University; Sherlock. It allows the usage of the so-called Job Arrays, in which each job is designated to a chromosome. In this way, tasks are efficiently distributed over _slurm_ jobs, both for pre-processing and analysis. 
+This pipeline has been designed to function in cloud computer services "---" such as the one available at Stanford University; Sherlock. It allows the usage of the so-called Job Arrays, in which each job is designated to a chromosome. In this way, tasks are efficiently distributed over _slurm_ jobs, both for pre-processing and analysis. 
 
 ## Pipeline
 
