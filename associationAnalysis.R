@@ -72,7 +72,7 @@ errorCovariance <- numeric()
 # Load genotype data (cols = patients, rows = snps)
 chrSnpFile = processedFiles[grep('impute', processedFiles)][grep(paste('CHR',CHR,'_',sep=''), processedFiles[grep('impute', processedFiles)])]
 snps = SlicedData$new();
-snps$fileDelimiter = ",";      # the TAB character
+snps$fileDelimiter = " ";      # the TAB character
 snps$fileOmitCharacters = "NA"; # denote missing values;
 snps$fileSkipRows = 0;          # one row of column labels
 snps$fileSkipColumns = 1;       # one column of row labels
@@ -144,9 +144,7 @@ me$all$eqtls$snps <- as.numeric(me$all$eqtls$snps)
 # Write 
 print("Saving file")
 output_filename <- paste(options$path$outputs, "CHR_", as.character(CHR),".csv", sep = '')
-write.table(me$all$eqtls, file = output_filename, sep = ",",
-            row.names = FALSE, col.names = FALSE)
-# write.csv(me$all$eqtls, output_filename)
+write_csv(me$all$eqtls, file = output_filename)
 print(cat("File saved in", output_filename ))
 
 
