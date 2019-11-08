@@ -10,7 +10,7 @@
 	
 	"chrArray":{
 		"CHRpreprocess": 6,
-		"CHRanalysis": ["all"]
+		"CHRanalysis": 6
 	},
 
 	"GWAS_ID_file": "GWAS_IDS.csv",
@@ -20,7 +20,9 @@
 	"genOptions":{
 		"mafthreshold": 0.01,
 		"hwethreshold": 5e-6,
-		"infothreshold": 0.7
+		"infothreshold": 0.7,
+		"Dosage": 1,
+		"Exclude":0
 	},
 
 	"analysis":{

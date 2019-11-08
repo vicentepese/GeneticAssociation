@@ -27,6 +27,7 @@ def argsParser():
 			chrArray.append("CHR" + str(s))
 
 	# Check if multiple chromosomes were considered
+	# TODO: this has to be changed -- include slurm options
 	# Multiple separated by comma
 	else:
 		if ',' in args.ChrIndex:
@@ -62,7 +63,6 @@ def importSample(options, sampleFile):
 
 def importProtData(options):
 
-	# Import
 	protData = OrderedDict()
 	with open(options['path']['protFolder'] + "MergedProtData.csv", 'r') as csv_file:
 		csv_reader = csv.reader(csv_file, delimiter = ',')
@@ -87,13 +87,11 @@ def importGWASID(options):
 def importCovar(options):
 
 	coverData = OrderedDict()
-	# Import file
 	with open(options['path']['genomFolder'] + options['covariateFile']) as csvFile:
 		csv_reader = csv.reader(csvFile)
 		for row in csv_reader:
 			if csv_reader.line_num is 1:
 				continue
-			# TODO: remove this
 			coverData[row[0].split()[0].split('_')[1] + row[0].split()[0].split('_')[2]] = row[0].split()[3:]
 
 	return coverData
@@ -103,31 +101,32 @@ def removeData(options):
 	# Get list of files
 	genomFiles = os.listdir(options["path"]["genomFolder"])
 
-	# Check if files have not been processed
+	# Check if files have not been filtered -- removed
 	print("Checking if files were processed")
 	if not any("slurm" in genomFile for genomFile in genomFiles):
 		print("Files were processed")
 		return
 
-	# If files were not processed, remove files that do not start with "CHR"
-	print("Files not processed, removing unnecessary files")
-	notCHRfiles = list(filter(lambda s: not (s.startswith("CHR")) , genomFiles))
-	notCHRfiles = list(filter(lambda s: not(s.endswith(".sample")), notCHRfiles))
+	# If files were not filtered, remove files that do not start with "CHR"
+	else:
+		print("Files not processed, removing unnecessary files")
+		notCHRfiles = list(filter(lambda s: not (s.startswith("CHR")) , genomFiles))
+		notCHRfiles = list(filter(lambda s: not(s.endswith(".sample")), notCHRfiles))
 
-	for notCHRfile in notCHRfiles:
-		os.remove(options['path']['genomFolder'] + notCHRfile)
+		for notCHRfile in notCHRfiles:
+			os.remove(options['path']['genomFolder'] + notCHRfile)
 
-	# Get list of files
-	genomFiles = os.listdir(options['path']["genomFolder"])
+		# Get list of files
+		genomFiles = os.listdir(options['path']["genomFolder"])
 
-	# Remove files that contian Shapeit and do not end with sample
-	genomFiles = list(filter(lambda s: "Shapeit" in s or "IGHREGION" in s, genomFiles))
-	for gfile in genomFiles:
-		os.remove(options['path']['genomFolder'] + gfile)
+		# Remove files that contian Shapeit and do not end with sample
+		genomFiles = list(filter(lambda s: "Shapeit" in s or "IGHREGION" in s, genomFiles))
+		for gfile in genomFiles:
+			os.remove(options['path']['genomFolder'] + gfile)
 
-	# Remove IGHREGION GENOTIPES
+		# Remove IGHREGION GENOTIPES
 
-	print("Files have been processed")
+		print("Files have been processed")
 
 def writeOrderedDict(data, filename):
 
@@ -192,12 +191,15 @@ def reorderData(indexes, IDs, data):
 	return reorData
 
 def GzipFileHandler(FileName, Read=True):
+
+	# If file is in gz format open with gzip
 	if '.gz' in FileName:
 		if Read is True:
 			OpenFile = gzip.open(FileName, 'rb')
 
 		else:
 			OpenFile = gzip.open(FileName, 'wb')
+	# Else open in text mode
 	else:
 		if Read is True:
 			OpenFile = open(FileName, 'r')
@@ -208,6 +210,8 @@ def GzipFileHandler(FileName, Read=True):
 	return OpenFile
 
 def ConvertGenDos(Genos, indexes):
+
+	# Convert the allele into a probability
 	SampleN = len(Genos)
 	SampleCheck = SampleN % 3
 	assert SampleCheck == 0
@@ -216,7 +220,6 @@ def ConvertGenDos(Genos, indexes):
 	for idx in indexes:
 		AA, AB, BB=map(float, Genos[idx*3:idx*3+3])
 		DosageInd=(0*AA)+AB+(2*BB)
-		#assert DosageInd <= 2.0
 		Sample += 1
 		Dosages += str(DosageInd)+' '
 
@@ -224,10 +227,16 @@ def ConvertGenDos(Genos, indexes):
 
 
 def ProcessStat(Stat, mafthreshold, hwethreshold, infothreshold):
+
+	# Verbose
 	logging.info('STAT FILE {} WITH THRESHOLDS AS FOLLOWS MAF {} HWE {} INFOSCORE {}'.format(Stat, mafthreshold, hwethreshold, infothreshold))
+
+	# Initialize
 	StatFile = GzipFileHandler(Stat)
 	GoodSnps =0
 	GoodIndex =[]
+
+	# For gene file in the impute data
 	for n, line in enumerate(StatFile):
 		if n > 10:
 			LineParse = line.strip().split(' ')
@@ -237,9 +246,6 @@ def ProcessStat(Stat, mafthreshold, hwethreshold, infothreshold):
 				if not False in hwe and info >= infothreshold and all_maf >= mafthreshold:
 					GoodSnps += 1
 					GoodIndex.append(index)
-		# elif n == 10:
-		# 	Header = line.strip()
-		# 	Header = {i:j for i,j in enumerate(Header.split(' '))}
 	StatFile.close()
 	prop='{0:.1f}'.format((float(GoodSnps)/float(n))*100)
 	logging.info('FOUND QCED SNPS {} OUT OF {} IN {} FILE {} % PERCENT '.format(GoodSnps, n,  Stat, prop))
@@ -259,7 +265,7 @@ def ProcessGenFile(GenFile, Stat, OutFile, Dosage, Exclude, chr, indexes, option
 
 	# Eclusion
 	if Exclude == 1:
-		Indices=ProcessStat(Stat=Stat,mafthreshold=0.01,hwethreshold=5e-6,infothreshold=0.7)
+		Indices=ProcessStat(Stat=Stat,mafthreshold=options['genOptions']['mafthreshold'], hwethreshold=options['genOptions']['hwethreshold'], infothreshold=options['genOptions']['infothreshold'])
 
 	# Initialize
 	Lines = 0
@@ -269,26 +275,30 @@ def ProcessGenFile(GenFile, Stat, OutFile, Dosage, Exclude, chr, indexes, option
 	# For each gene (line)
 	for line in GenIn:
 		Lines += 1
-		# sys.stdout.write("\rLine: %i" % Lines)
-		# sys.stdout.flush()
 		IndexLine += 1
+
+		# Verbose
 		if Lines == 100000:
 			LineBuffer += 1
 			Lines =0
 			logging.info('PROCESSED {} MILLION VARIANTS'.format(LineBuffer))
+
+		# If exclude critiria 
 		if Exclude == 1:
 			if IndexLine in Indices: # if the line is present in the indices then it is a good snp having passed all the thresholds
 				GenLine = line.strip().split(' ')
-				RsidHeader = GenLine[2]#' '.join(GenLine[:6])
+				RsidHeader = GenLine[2]
 				if Dosage == 1:
 					Genos = ConvertGenDos(GenLine[6:], Indices)
 					ParsedLine = RsidHeader +' '+Genos.strip()
 					OutGen.write(ParsedLine+'\n')
 				else:
 					OutGen.write(line)
+					
+		# If no exclusion, take all SNPS
 		else:
 			GenLine = str(line).split(' ')
-			posLine = GenLine[2]#' '.join(GenLine[:6])
+			posLine = GenLine[2]
 			if Dosage == 1:
 				Genos = ConvertGenDos(GenLine[5:], indexes)
 				ParsedLine = posLine + ' ' + Genos.strip()
@@ -296,6 +306,7 @@ def ProcessGenFile(GenFile, Stat, OutFile, Dosage, Exclude, chr, indexes, option
 			else:
 				OutGen.write(line)
 
+	# Close
 	OutGen.close()
 	GenIn.close()
 	logging.info('PROCESSED IN TOTAL {} FROM {} AND DUMPED THE VARIANTS INTO {}'.format(IndexLine, GenFile, OutFile))
@@ -332,7 +343,6 @@ def main(chrArray):
 		samples = importSample(options, sampleFile)
 		print('Sample file of %s imported' % (chr))
 
-
 		# Match samples
 		indexes,IDs = getIndexes(options, processedProtData, samples)
 
@@ -346,7 +356,6 @@ def main(chrArray):
 		# Reorder covariates data and write
 		covarDataReord = reorderData(indexes,IDs, covarData)
 		writeOrderedDict(covarDataReord, options['path']['processedFolder'] + chr + '_' + 'covarData.csv')
-
 		print('Covariate data reordered and saved')
 
 		# Get impute file name
@@ -357,8 +366,8 @@ def main(chrArray):
 
 		# Initialize
 		outFile = options['path']['processedFolder'] + chr + '_' + 'imputeData'
-		Dosage = 1
-		Exclude = 0
+		Dosage = options['genOptions']['Dosage']
+		Exclude = options['genOptions']['Exclude']
 		Log = options['logPath'] + str(chr)
 		logging.basicConfig(filename=Log,level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 

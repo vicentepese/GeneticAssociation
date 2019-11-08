@@ -14,7 +14,7 @@
         "checkRepro":"Data/ng.3625-S4.xlsx",
         "refdb": "/scratch/users/vipese/GeneticAssociation/Resources/refdb.dbsnp",
         "reproDatamod": "Data/checkReproDataMod.csv",
-        "chrData": "Data/CHR6_filtdef.gz"
+        "chrData": "/scratch/users/vipese/GeneticAssociation/AA_GzipOutputs/CHR_6_filt.csv.gz"
     }
 
 }
