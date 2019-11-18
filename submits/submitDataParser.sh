@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #SBATCH --job-name=dataParser
-#SBATCH -p owners
-#SBATCH --cpus-per-task=20
+#SBATCH -p mignot
+#SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=20G
 #SBATCH --output=../SlurmOutputs/DataParser/dataParser_CHR%a.out
 #SBATCH --error=../SlurmOutputs/DataParser/dataParser_CHR%a.err

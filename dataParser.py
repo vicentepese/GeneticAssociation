@@ -13,7 +13,7 @@ import sys
 def argsParser():
 
 	# Define argument parser
-	parser = argparse.ArgumentParser(description='A script that cleans the  oxforf gen file')
+	parser = argparse.ArgumentParser(description='')
 
 	# Add arguments
 	parser.add_argument('-ChrIndex', help= 'int: number of the chromosome to be parsed. Only for slurm', required=False)
@@ -34,9 +34,7 @@ def argsParser():
 	# Else, analyze the inputed chromosome (slurm)
 	elif len(args.ChrIndex) > 1:
 		chrArray = ["CHR" + str(args.ChrIndex)]
-		print(" Len > 1" + chrArray)
 	elif len(args.ChrIndex) == 1:
-		print("Len = 1 " + chrArray)
 		chrArray = ["CHR" + str(args.ChrIndex)]
 
 	return chrArray
@@ -291,7 +289,10 @@ def ProcessGenFile(GenFile, Stat, OutFile, Dosage, Exclude, chr, indexes, option
 		# If no exclusion, take all SNPS
 		else:
 			GenLine = str(line).split(' ')
-			posLine = GenLine[2]
+			if 'rs' in GenLine[1]:
+				posLine = GenLine[1].split(':')[0] + ':' + GenLine[2]
+			else:
+				posLine = GenLine[2]
 			if Dosage == 1:
 				Genos = ConvertGenDos(GenLine[5:], indexes)
 				ParsedLine = posLine + ' ' + Genos.strip()

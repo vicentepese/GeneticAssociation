@@ -24,3 +24,5 @@
 2019-11-06 16:04:50,069 - root - INFO - PROCESSED 23 MILLION VARIANTS
 2019-11-06 16:05:12,112 - root - INFO - PROCESSED 24 MILLION VARIANTS
 2019-11-06 16:05:20,454 - root - INFO - PROCESSED IN TOTAL 2438314 FROM /scratch/users/vipese/GeneticAssociation/GenomData/CHR15_Plate114_115_116_PMRA_hwe_maf001_shapeit.impute.gz AND DUMPED THE VARIANTS INTO /scratch/users/vipese/GeneticAssociation/ProcessedData/CHR15_imputeData
+2019-11-18 15:10:18,713 - root - INFO - READING THE GENOTYPE FILE /scratch/users/vipese/GeneticAssociation/GenomData/CHR15_Plate114_115_116_PMRA_hwe_maf001_shapeit.impute.gz
+2019-11-18 15:10:48,755 - root - INFO - PROCESSED 1 MILLION VARIANTS

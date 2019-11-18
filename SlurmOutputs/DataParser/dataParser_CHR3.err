@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "dataParser.py", line 371, in <module>
+    chrArray = argsParser()
+  File "dataParser.py", line 38, in argsParser
+    print("Len = 1 " + chrArray)
+UnboundLocalError: local variable 'chrArray' referenced before assignment
